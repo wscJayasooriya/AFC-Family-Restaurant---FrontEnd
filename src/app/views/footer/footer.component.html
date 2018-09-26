@@ -1,0 +1,70 @@
+<footer>
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-pb-sm">
+          <h2>Follow us..</h2>
+          <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind.</p>
+          <p class="icons">
+            <a href="#"><i class="fa fa-facebook" style="color: coral; font-size: 30px"></i>&nbsp;&nbsp; </a>
+            <a href="#"><i class="fa fa-twitter" style="color: coral; font-size: 30px"></i>&nbsp;&nbsp; </a>
+            <a href="#"><i class="fa fa-google-plus" style="color: coral; font-size: 30px">&nbsp; &nbsp;</i></a>
+            <a href="#"><i class="fa fa-instagram" style="color: coral; font-size: 30px">&nbsp;&nbsp; </i></a>
+            <a href="#"><i class="fa fa-linkedin" style="color: coral; font-size: 30px">&nbsp; &nbsp;</i></a>
+          </p>
+        </div>
+
+        <div class="col-md-4 col-pb-sm">
+          <h2>Latest Blog</h2>
+          <div class="f-entry">
+            <a href="#" class="featured-img"><img src="../assets/images/dish-5.jpg"><img src="../assets/images/sdn_10.jpg"></a>
+            <div class="desc">
+              <span>May 5, 2018</span>
+              <h6>How to cook beef Grilled with potato</h6>
+            </div>
+          </div>
+          <div class="f-entry">
+            <a href="#" class="featured-img"><img src="../assets/images/sdn_10.jpg"><img src="../assets/images/sdn_11.jpg"></a>
+            <div class="desc">
+              <span>June 10, 2018</span>
+              <h6>A Japanese Master Chef</h6>
+            </div>
+          </div>
+          <div class="f-entry">
+            <a href="#" class="featured-img"><img src="../assets/images/sdn_12.jpg"><img src="../assets/images/sdn_11.jpg"></a>
+            <div class="desc">
+              <span>July 21, 2018</span>
+              <h6>Special Recipe for this month</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-pb-sm">
+          <h2>Newsletter</h2>
+          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia</p>
+          <div class="subscribe text-center">
+            <div class="form-group has-feedback" [class.has-error]="fullEmailControll.invalid && fullEmailControll.touched" [class.has-success]="fullEmailControll.valid">
+              <input required type="email" name="email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" class="form-control text-center" [(ngModel)]="email" #fullEmailControll="ngModel" placeholder="Enter Email address"style="border-color: dodgerblue">
+              <span style="font-size: 14px; color: red;" class="help-block" *ngIf="fullEmailControll.errors?.required && fullEmailControll.touched">E-mail is Required</span>
+              <span style="font-size: 14px; color: red;" class="help-block" *ngIf="fullEmailControll.errors?.pattern && fullEmailControll.touched">E-mail is Invalid(ex : example@gmail.com)</span>
+              <br>
+              <button type="submit" class="btn btn-primary btn-custom">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      &#x0000A;
+      <br>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="container_12" style="float: bottom">
+            <div class="grid_12">&copy; 2018 by AFC Family Restaurant &sect;<i class="fa fa-heart" style="color: red"><span> WSC Jayasooriya</span></i> &sect; </div>
+            <div class="grid_12"> Supported by Institute of Java & Software Engineer <i class="fa fa-heart" style="color: red"><span> IJSE</span> </i> </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

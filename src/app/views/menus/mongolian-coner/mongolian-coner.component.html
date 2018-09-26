@@ -1,0 +1,247 @@
+<app-menus></app-menus>
+<div class="mgc-pnl" style="margin-top: 120px">
+
+<div id="titel"> Mongolian Coner ---> </div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-3-lg">
+      <div class="card" style="width: 18rem">
+        <img src="../assets/images/mongo_1.jpg" alt="Card One" class="card-img-top">
+        <div class="card-body">
+          <div style="color: #110000">MONGOLIAN DEVELLED PORK</div>
+          <div style="color:red">LKR1140.00</div>
+          <div style="color:gray ; font-size: 12px">As low as :</div>
+          <div style="color:red; font-size: 13px; margin-left: 65px; margin-top: -20px; font-weight: bold">LKR570.00</div>
+        </div>
+        <div (click)="openVerticallyCentered(content)" class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #content let-c="close" let-d="dismiss">
+      <form class="popup">
+        <div  class="modal-header">
+          <button  type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="margin-top: 30px; width: 250px; margin-left: 5px" mat-card-image class="popupImg" src="../assets/images/mongo_1.jpg">
+          <h4 style="margin-top: -200px; margin-left: 300px" class="modal-title">MONGOLIAN DEVELLED PORK</h4>
+          <p style="margin-left: 350px" class="price">LKR550.00</p>
+
+          <p class="otherInfo">
+          <li>SMALL SERVES 1 TO 2 ADULTS</li>
+          <li>REGULAR SERVES 2 TO 3 ADULTS</li>
+          </p>
+
+
+          <div  class="portion">
+            <label style="font-weight: bold">PORTION SIZE</label><br>
+            <input type="radio" name="portionSize" checked> REGULAR<br>
+            <input type="radio" name="portionSize" checked> SMALL -LKR370.00<br>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btnaddCart" type="button" class="btn btn-light"><i class="fa fa-shopping-basket"></i>Add To Cart</button>
+        </div>
+      </form>
+    </ng-template>
+
+
+    <div class="col-3-lg ml-4">
+      <div class="card" style="width: 18rem;">
+        <img src="../assets/images/mongo_2.jpg" alt="Card Two" class="card-img-top">
+        <div class="card-body">
+          <div style="color: #110000">SEA FOOD RICE</div>
+          <div style="color:red">LKR1140.00</div>
+          <div style="color:gray ; font-size: 12px">As low as :</div>
+          <div style="color:red; font-size: 13px; margin-left: 65px; margin-top: -20px; font-weight: bold">LKR570.00</div>
+        </div>
+        <div (click)="openVerticallyCentered1(content1)" class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #content1 let-c="close" let-d="dismiss">
+      <form class="popup">
+        <div  class="modal-header">
+          <button  type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="margin-top: 30px; width: 250px; margin-left: 5px" mat-card-image class="popupImg" src="../assets/images/mongo_2.jpg">
+          <h4 style="margin-top: -200px; margin-left: 300px" class="modal-title">SEA FOOD RICE</h4>
+          <p style="margin-left: 350px" class="price">LKR550.00</p>
+
+          <p class="otherInfo">
+          <li>SMALL SERVES 1 TO 2 ADULTS</li>
+          <li>REGULAR SERVES 2 TO 3 ADULTS</li>
+          </p>
+
+
+          <div  class="portion">
+            <label style="font-weight: bold">PORTION SIZE</label><br>
+            <input type="radio" name="portionSize" checked> REGULAR<br>
+            <input type="radio" name="portionSize" checked> SMALL -LKR370.00<br>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btnaddCart1" type="button" class="btn btn-light"><i class="fa fa-shopping-basket"></i>Add To Cart</button>
+        </div>
+      </form>
+    </ng-template>
+
+    <div  class="col-3-lg ml-4">
+      <div class="card" style="width: 18rem;margin-left: 600px;margin-top: -350px">
+        <img src="../assets/images/mongo_3.jpg" alt="Card Two" class="card-img-top">
+        <div class="card-body">
+          <div style="color: #110000">MIXED NOODLES</div>
+          <div style="color:red">LKR1140.00</div>
+          <div style="color:gray ; font-size: 12px">As low as :</div>
+          <div style="color:red; font-size: 13px; margin-left: 65px; margin-top: -20px; font-weight: bold">LKR570.00</div>
+        </div>
+        <div (click)="openVerticallyCentered2(content2)" class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #content2 let-c="close" let-d="dismiss">
+      <form class="popup">
+        <div  class="modal-header">
+          <button  type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="margin-top: 30px; width: 250px; margin-left: 5px" mat-card-image class="popupImg" src="../assets/images/mongo_3.jpg">
+          <h4 style="margin-top: -200px; margin-left: 300px" class="modal-title">MIXED NOODLES</h4>
+          <p style="margin-left: 350px" class="price">LKR550.00</p>
+
+          <p class="otherInfo">
+          <li>SMALL SERVES 1 TO 2 ADULTS</li>
+          <li>REGULAR SERVES 2 TO 3 ADULTS</li>
+          </p>
+
+
+          <div  class="portion">
+            <label style="font-weight: bold">PORTION SIZE</label><br>
+            <input type="radio" name="portionSize" checked> REGULAR<br>
+            <input type="radio" name="portionSize" checked> SMALL -LKR370.00<br>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btnaddCart2" type="button" class="btn btn-light"><i class="fa fa-shopping-basket"></i>Add To Cart</button>
+        </div>
+      </form>
+    </ng-template>
+
+
+    <div style="margin-left: -600px;height: 400px; margin-top:-30px">
+      <div  class="card" style="width: 18rem;margin-left: 600px">
+        <img src="../assets/images/mongo_4.jpg" alt="Card Two" class="card-img-top">
+        <div class="card-body">
+          <div style="color: #110000">SEA FOOD NOODLES</div>
+          <div style="color:red">LKR1140.00</div>
+          <div style="color:gray ; font-size: 12px">As low as :</div>
+          <div style="color:red; font-size: 13px; margin-left: 65px; margin-top: -20px; font-weight: bold">LKR570.00</div>
+        </div>
+        <div (click)="openVerticallyCentered3(content3)" class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #content3 let-c="close" let-d="dismiss">
+      <form class="popup">
+        <div  class="modal-header">
+          <button  type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="margin-top: 30px; width: 250px; margin-left: 5px" mat-card-image class="popupImg" src="../assets/images/mongo_4.jpg">
+          <h4 style="margin-top: -200px; margin-left: 300px" class="modal-title">SEA FOOD NOODLES</h4>
+          <p style="margin-left: 350px" class="price">LKR550.00</p>
+
+          <p class="otherInfo">
+          <li>SMALL SERVES 1 TO 2 ADULTS</li>
+          <li>REGULAR SERVES 2 TO 3 ADULTS</li>
+          </p>
+
+
+          <div  class="portion">
+            <label style="font-weight: bold">PORTION SIZE</label><br>
+            <input type="radio" name="portionSize" checked> REGULAR<br>
+            <input type="radio" name="portionSize" checked> SMALL -LKR370.00<br>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btnaddCart3" type="button" class="btn btn-light"><i class="fa fa-shopping-basket"></i>Add To Cart</button>
+        </div>
+      </form>
+    </ng-template>
+
+    <div style="margin-left: -580px;height: 400px; margin-top: -30px">
+      <div  class="card" style="width: 18rem;margin-left: 600px">
+        <img src="../assets/images/mongo_5.jpg" alt="Card Two" class="card-img-top">
+        <div class="card-body">
+          <div style="color: #110000">MONGO STYLE FISH</div>
+          <div style="color:red">LKR1140.00</div>
+          <div style="color:gray ; font-size: 12px">As low as :</div>
+          <div style="color:red; font-size: 13px; margin-left: 65px; margin-top: -20px; font-weight: bold">LKR570.00</div>
+        </div>
+        <div (click)="openVerticallyCentered4(content4)" class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #content4 let-c="close" let-d="dismiss">
+      <form class="popup">
+        <div  class="modal-header">
+          <button  type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="margin-top: 30px; width: 250px; margin-left: 5px" mat-card-image class="popupImg" src="../assets/images/mongo_5.jpg">
+          <h4 style="margin-top: -200px; margin-left: 300px" class="modal-title">MONGO STYLE FISH</h4>
+          <p style="margin-left: 350px" class="price">LKR550.00</p>
+
+          <p class="otherInfo">
+          <li>SMALL SERVES 1 TO 2 ADULTS</li>
+          <li>REGULAR SERVES 2 TO 3 ADULTS</li>
+          </p>
+
+
+          <div  class="portion">
+            <label style="font-weight: bold">PORTION SIZE</label><br>
+            <input type="radio" name="portionSize" checked> REGULAR<br>
+            <input type="radio" name="portionSize" checked> SMALL -LKR370.00<br>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btnaddCart4" type="button" class="btn btn-light"><i class="fa fa-shopping-basket"></i>Add To Cart</button>
+        </div>
+      </form>
+    </ng-template>
+
+
+  </div>
+</div>
+</div>
+<div style="margin-top: 100px"></div>
+
+<app-footer></app-footer>

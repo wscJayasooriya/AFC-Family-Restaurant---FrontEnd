@@ -1,0 +1,58 @@
+<div class="main-panel">
+  <div id="header">
+    <div class="logo"><a href="#">AFC <span>Family Group</span></a>
+
+      <a href="#" (click)="logout()"><i class="fa fa-sign-out" style="margin-left: 1000px">Sign Out</i> </a>
+
+    </div>
+  </div>
+  <div id="container">
+    <div class="sidebar">
+
+      <div id="title">
+        <br>
+        <h2>AFC</h2>
+        <h4>Family Restaurant</h4>
+        <h5>Good Food.. Good Life..</h5>
+        <h6>No:165 , Hiribura Cross rd,</h6>
+        <h6>Karapitiya.</h6>
+        <h6>091-2228456</h6>
+        <br>
+      </div>
+
+      <ul id="sidenav">
+        <li><a routerLink="/main/dashboard" routerLinkActive="active"><i class="fa fa-dashboard" style="font-size: 30px"></i>&nbsp; DashBoard</a> </li>
+        <li><a href="/main/manage-employee"><i class="fa fa-user-circle-o" style="font-size: 30px"></i>&nbsp; Manage Employee</a> </li>
+        <li><a href="/main/manage-meal"><i class="fa fa-reorder" style="font-size: 30px"></i>&nbsp; Manage Meal</a> </li>
+        <li><a href="#"><i class="fa fa-first-order" style="font-size: 30px"></i>&nbsp; Manage Orders</a> </li>
+        <li><a href="/main/view-comment"><i class="fa fa-comment" style="font-size: 30px"></i>&nbsp; View Comment</a> </li>
+        <li><a href="#"><i class="fa fa-tasks" style="font-size: 30px"></i>&nbsp; View Orders</a> </li>
+        <li><a href="#"><i class="fa fa-users" style="font-size: 30px"></i>&nbsp; View Users</a> </li>
+        <li><a href="/main/manage-vehicle"><i class="fa fa-bicycle" style="font-size: 30px"></i>&nbsp; Manage Vehicle</a> </li>
+        <li><a href="#"><i class="fa fa-user" style="font-size: 30px"></i>&nbsp; User Profile</a> </li>
+        <li><a href="#"><i class="fa fa-cogs" style="font-size: 30px"></i>&nbsp; Setting</a> </li>
+        <li><div style="height: 200px"></div></li>
+
+      </ul>
+    </div>
+
+    <div class="content">
+
+    </div>
+
+  </div>
+
+
+</div>
+
+<router-outlet></router-outlet>
+
+<!--<footer class="main-footer">-->
+  <!--<div class="footer-copyright text-center py-3">© 2018 Copyright:-->
+    <!--<a href="http://www.ijse.lk/"> ijse.lk</a>-->
+    <!--<p>Create by &nbsp; <i class="fa fa-heart" style="color: red"></i> WSC Jayasooriya</p>-->
+  <!--</div>-->
+<!--</footer>-->
+
+
+

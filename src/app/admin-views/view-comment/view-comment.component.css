@@ -1,0 +1,27 @@
+.cmnt-pnl{
+  margin-left: 250px;
+}
+input[type=text],textarea[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#tblComment tbody{
+  background-color: white;
+}
+
+#tblComment tr{
+  cursor: pointer;
+}
+
+#tblComment tr td:last-child{
+  text-align: center;
+}
+
+#tblComment tr td:last-child:hover{
+  color: red;
+}

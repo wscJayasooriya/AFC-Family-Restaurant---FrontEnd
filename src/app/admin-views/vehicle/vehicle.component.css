@@ -1,0 +1,27 @@
+.vehc-pnl{
+  margin-left: 250px;
+}
+input[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#tblVehicle tbody{
+  background-color: white;
+}
+
+#tblVehicle tr{
+  cursor: pointer;
+}
+
+#tblVehicle tr td:last-child{
+  text-align: center;
+}
+
+#tblVehicle tr td:last-child:hover{
+  color: red;
+}

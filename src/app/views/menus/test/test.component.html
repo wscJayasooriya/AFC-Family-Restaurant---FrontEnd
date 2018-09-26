@@ -1,0 +1,40 @@
+<app-menus></app-menus>
+<div class="test-pnl">
+<h3 class="label" style="color: #1da1f2; margin-left: 15%">Test List</h3>
+
+<div class="table-responsive">
+  <table class="table table-hover" id="tblTest">
+    <thead class="grey lighten-2" style="text-align: center">
+    <tr >
+      <th>Image</th>
+      <th>Category</th>
+      <th>Meal Name</th>
+      <th>Description</th>
+      <th>Small Portion Price</th>
+      <th>Large Portion Price</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody style="text-align: center">
+    <tr *ngFor="let meal of meals | paginate: {itemsPerPage: 8, currentPage: p}">
+
+      <td><img src="{{meal.imageURL}}" style="width: 70px; height: 70px;"></td>
+      <td>{{meal.category}}</td>
+      <td>{{meal.mealName}}</td>
+      <td>{{meal.desription}}</td>
+      <td>{{meal.smallPrice}}</td>
+      <td>{{meal.largePrice}}</td><td><i class="fa fa-trash-o fa-2x" style="font-size:30px;"></i></td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="6">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,76 @@
+<div class="emp-pnl" xmlns:currentPage="http://www.w3.org/1999/xhtml" xmlns:itemsPerPage="http://www.w3.org/1999/xhtml"
+     xmlns:paginate="http://www.w3.org/1999/xhtml">
+  <h1 style="margin-left: 50px">Manage Employee</h1>
+  <hr style="border: 2px solid; color:#007bb5;width: 90%">
+
+  <div class="container">
+    <div class="header" style="display: inline;">
+      <button class="btn btn-primary" style="font-size: 20px;">
+        Create an Employee
+      </button>
+    </div>
+    <form action=""  #frmEmployee="ngForm" (ngSubmit)="saveEmployee()">
+      <div>
+        <div class="form-group">
+          <input type="text" id="empName" name="txtEmpName" placeholder="Employee Name" [(ngModel)]="selectedEmployee.emp_Name" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" id="address" name="txtAddress" placeholder="Employee Address" [(ngModel)]="selectedEmployee.emp_Address" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" id="nic" name="txtNIC" placeholder="Employee NIC" [(ngModel)]="selectedEmployee.emp_NIC" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" id="contact" name="txtContact" placeholder="Employee Contact No" [(ngModel)]="selectedEmployee.emp_Contact" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" id="empSalary" name="empSalary"  placeholder="Employee Monthly Basic Salary" [(ngModel)]="selectedEmployee.emp_Salary" class="form-control">
+        </div>
+        <div class="form-group btn-emp">
+          <button (click)="clear()" style="width: 100px;margin-left: 200px" type="button" class="btn btn-warning">Clear</button>
+          &nbsp;
+          &nbsp;
+          <button style="width: 100px" type="submit" class="btn btn-primary ">Save</button
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <br>
+
+  <div class="emp-tbl" style="margin-right: 20px;margin-left: 20px">
+    <table id="tblEmployee" class="table table-bordered table-hover">
+      <thead class="grey lighten-2" style="text-align: center">
+      <tr>
+        <th>Employee Name</th>
+        <th>Address</th>
+        <th>NIC No</th>
+        <th>Contact NO</th>
+        <th>Salary</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody style="text-align: center">
+      <tr *ngFor="let employee of employees | paginate: { itemsPerPage: 7, currentPage: p}"
+          (click)="selectEmployee(employee)" [class.selected]="employee==selectedEmployee">
+        <th>{{employee.emp_Name}}</th>
+        <td>{{employee.emp_Address}}</td>
+        <td>{{employee.emp_NIC}}</td>
+        <td>{{employee.emp_Contact}}</td>
+        <td>{{employee.emp_Salary}}</td>
+        <td><i class="fa fa-trash-o fa-2x" style="font-size:30px;" (click)="deleteEmployee(employee)"></i></td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="6">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</div>
+

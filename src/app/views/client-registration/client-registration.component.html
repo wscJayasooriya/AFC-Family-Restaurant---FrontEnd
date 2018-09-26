@@ -1,0 +1,31 @@
+<link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+
+<form action="" method="post" #frmCustomers="ngForm" (ngSubmit)="saveCustomer()">
+
+  <h1>Sign Up</h1>
+
+  <fieldset>
+
+    <legend><span class="number">1</span> Your basic Info</legend>
+
+    <input type="text" id="name" name="fullName" placeholder="Full Name" [(ngModel)]="selectedCustomer.cus_Name">
+    <input type="email" id="mail" name="email" placeholder="Email" [(ngModel)]="selectedCustomer.cus_Email">
+    <input type="text" id="address" name="address" placeholder="Address" [(ngModel)]="selectedCustomer.cus_Address">
+    <input type="text" id="contact" name="contact" placeholder="Contact" [(ngModel)]="selectedCustomer.cus_Contact">
+
+
+  </fieldset>
+
+  <fieldset>
+
+    <legend><span class="number">2</span> Your profile</legend>
+
+    <input type="text" id="username" name="username" placeholder="UserName" [(ngModel)]="selectedCustomer.cus_UName">
+    <input type="password" id="password1" name="passwrod" placeholder="Password" [(ngModel)]="selectedCustomer.cus_Password">
+    <input type="password" id="password2" name="reptPassword" placeholder="Repeat Password" [(ngModel)]="selectedCustomer.cus_ConfPassword">
+
+  </fieldset>
+
+  <button type="submit" >Sign Up</button>
+
+</form>

@@ -1,0 +1,281 @@
+<app-menus></app-menus>
+<div class="west-pnl" style="margin-top: 120px">
+
+<div id="titel"> Western Cuisine ---> </div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-3-lg">
+      <div class="card" style="width: 18rem">
+        <img src="../assets/images/chicken_full.jpeg" alt="Card One" class="card-img-top">
+        <div class="card-body">
+          <div style="color: #110000">GRILLED FULL CHICKEN</div>
+          <div style="color:red">LKR 1140.00</div>
+        </div>
+        <div (click)="openVerticallyCentered(content)" class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #content let-c="close" let-d="dismiss">
+      <form class="popup">
+        <div  class="modal-header">
+          <button  type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="margin-top: 30px; width: 250px; margin-left: 5px" mat-card-image class="popupImg" src="../assets/images/chicken_full.jpeg">
+          <h4 style="margin-top: -200px; margin-left: 300px" class="modal-title">GRILLED FULL CHICKEN</h4>
+          <p style="margin-left: 350px" class="price">LKR550.00</p>
+
+          <p class="otherInfo">
+          <li>SMALL SERVES 1 TO 2 ADULTS</li>
+          <li>REGULAR SERVES 2 TO 3 ADULTS</li>
+          </p>
+
+
+          <div  class="portion">
+            <label style="font-weight: bold">PORTION SIZE</label><br>
+            <input type="radio" name="portionSize" checked> REGULAR<br>
+            <input type="radio" name="portionSize" checked> SMALL -LKR370.00<br>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btnaddCart" type="button" class="btn btn-light"><i class="fa fa-shopping-basket"></i>Add To Cart</button>
+        </div>
+      </form>
+    </ng-template>
+
+
+    <div class="col-3-lg ml-4">
+      <div class="card" style="width: 18rem;">
+        <img src="../assets/images/seafood_west.jpeg" alt="Card Two" class="card-img-top">
+        <div class="card-body">
+          <div style="color: #110000">MIXED GRILLED</div>
+          <div style="color:red">LKR 980.00</div>
+
+        </div>
+        <div (click)="openVerticallyCentered1(content1)" class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #content1 let-c="close" let-d="dismiss">
+      <form class="popup">
+        <div  class="modal-header">
+          <button  type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="margin-top: 30px; width: 250px; margin-left: 5px" mat-card-image class="popupImg" src="../assets/images/seafood_west.jpeg">
+          <h4 style="margin-top: -200px; margin-left: 300px" class="modal-title">MIXED GRILLED</h4>
+          <p style="margin-left: 350px" class="price">LKR550.00</p>
+
+          <p class="otherInfo">
+          <li>SMALL SERVES 1 TO 2 ADULTS</li>
+          <li>REGULAR SERVES 2 TO 3 ADULTS</li>
+          </p>
+
+
+          <div  class="portion">
+            <label style="font-weight: bold">PORTION SIZE</label><br>
+            <input type="radio" name="portionSize" checked> REGULAR<br>
+            <input type="radio" name="portionSize" checked> SMALL -LKR370.00<br>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btnaddCart1" type="button" class="btn btn-light"><i class="fa fa-shopping-basket"></i>Add To Cart</button>
+        </div>
+      </form>
+    </ng-template>
+
+    <div  class="col-3-lg ml-4">
+      <div class="card" style="width: 18rem;margin-left: 600px;  margin-top: -335px">
+        <img src="../assets/images/bbq_pork_west.jpg" alt="Card Two" class="card-img-top">
+        <div class="card-body">
+          <div style="color: #110000">B.B.Q.PORK</div>
+          <div style="color:red">LKR 1650.00</div>
+        </div>
+        <div (click)="openVerticallyCentered2(content2)" class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #content2 let-c="close" let-d="dismiss">
+      <form class="popup">
+        <div  class="modal-header">
+          <button  type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="margin-top: 30px; width: 250px; margin-left: 5px" mat-card-image class="popupImg" src="../assets/images/bbq_pork_west.jpg">
+          <h4 style="margin-top: -200px; margin-left: 300px" class="modal-title">B.B.Q.PORK</h4>
+          <p style="margin-left: 350px" class="price">LKR550.00</p>
+
+          <p class="otherInfo">
+          <li>SMALL SERVES 1 TO 2 ADULTS</li>
+          <li>REGULAR SERVES 2 TO 3 ADULTS</li>
+          </p>
+
+
+          <div  class="portion">
+            <label style="font-weight: bold">PORTION SIZE</label><br>
+            <input type="radio" name="portionSize" checked> REGULAR<br>
+            <input type="radio" name="portionSize" checked> SMALL -LKR370.00<br>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btnaddCart2" type="button" class="btn btn-light"><i class="fa fa-shopping-basket"></i>Add To Cart</button>
+        </div>
+      </form>
+    </ng-template>
+
+
+    <div style="margin-left: -600px;height: 400px; margin-top:-30px">
+      <div  class="card" style="width: 18rem;margin-left: 600px">
+        <img src="../assets/images/west_3.jpg" alt="Card Two" class="card-img-top">
+        <div class="card-body">
+          <div style="color: #110000">CHICKEN PICCATA & SWEET CORN</div>
+          <div style="color:red">LKR 1200.00</div>
+        </div>
+        <div (click)="openVerticallyCentered3(content3)" class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #content3 let-c="close" let-d="dismiss">
+      <form class="popup">
+        <div  class="modal-header">
+          <button  type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="margin-top: 30px; width: 250px; margin-left: 5px" mat-card-image class="popupImg" src="../assets/images/west_3.jpg">
+          <h4 style="margin-top: -200px; margin-left: 300px" class="modal-title">CHICKEN PICCATA & SWEET CORN</h4>
+          <p style="margin-left: 350px" class="price">LKR550.00</p>
+
+          <p class="otherInfo">
+          <li>SMALL SERVES 1 TO 2 ADULTS</li>
+          <li>REGULAR SERVES 2 TO 3 ADULTS</li>
+          </p>
+
+
+          <div  class="portion">
+            <label style="font-weight: bold">PORTION SIZE</label><br>
+            <input type="radio" name="portionSize" checked> REGULAR<br>
+            <input type="radio" name="portionSize" checked> SMALL -LKR370.00<br>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btnaddCart3" type="button" class="btn btn-light"><i class="fa fa-shopping-basket"></i>Add To Cart</button>
+        </div>
+      </form>
+    </ng-template>
+
+    <div style="margin-left: -580px;height: 400px; margin-top: -30px">
+      <div  class="card" style="width: 18rem;margin-left: 600px">
+        <img src="../assets/images/west_1.jpg" alt="Card Two" class="card-img-top">
+        <div class="card-body">
+          <div style="color: #110000">SEA FOOD PLATE</div>
+          <div style="color:red">LKR 900.00</div>
+        </div>
+        <div (click)="openVerticallyCentered4(content4)" class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #content4 let-c="close" let-d="dismiss">
+      <form class="popup">
+        <div  class="modal-header">
+          <button  type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="margin-top: 30px; width: 250px; margin-left: 5px" mat-card-image class="popupImg" src="../assets/images/west_1.jpg">
+          <h4 style="margin-top: -200px; margin-left: 300px" class="modal-title">SEA FOOD PLATE</h4>
+          <p style="margin-left: 350px" class="price">LKR550.00</p>
+
+          <p class="otherInfo">
+          <li>SMALL SERVES 1 TO 2 ADULTS</li>
+          <li>REGULAR SERVES 2 TO 3 ADULTS</li>
+          </p>
+
+
+          <div  class="portion">
+            <label style="font-weight: bold">PORTION SIZE</label><br>
+            <input type="radio" name="portionSize" checked> REGULAR<br>
+            <input type="radio" name="portionSize" checked> SMALL -LKR370.00<br>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btnaddCart4" type="button" class="btn btn-light"><i class="fa fa-shopping-basket"></i>Add To Cart</button>
+        </div>
+      </form>
+    </ng-template>
+
+    <div style="margin-left: 20px;height: 400px; margin-top: -400px">
+      <div  class="card" style="width: 18rem;margin-left: 600px">
+        <img src="../assets/images/west_2.jpg" alt="Card Two" class="card-img-top">
+        <div class="card-body">
+          <div style="color: #110000">POTATO CHIPS WITH SAUSAGES</div>
+          <div style="color:red">LKR 750.00</div>
+        </div>
+        <div (click)="openVerticallyCentered5(content5)" class="icon">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #content5 let-c="close" let-d="dismiss">
+      <form class="popup">
+        <div  class="modal-header">
+          <button  type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img style="margin-top: 30px; width: 250px; margin-left: 5px" mat-card-image class="popupImg" src="../assets/images/west_2.jpg">
+          <h4 style="margin-top: -200px; margin-left: 300px" class="modal-title">POTATO CHIPS WITH SAUSAGES</h4>
+          <p style="margin-left: 350px" class="price">LKR550.00</p>
+
+          <p class="otherInfo">
+          <li>SMALL SERVES 1 TO 2 ADULTS</li>
+          <li>REGULAR SERVES 2 TO 3 ADULTS</li>
+          </p>
+
+
+          <div  class="portion">
+            <label style="font-weight: bold">PORTION SIZE</label><br>
+            <input type="radio" name="portionSize" checked> REGULAR<br>
+            <input type="radio" name="portionSize" checked> SMALL -LKR370.00<br>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btnaddCart5" type="button" class="btn btn-light"><i class="fa fa-shopping-basket"></i>Add To Cart</button>
+        </div>
+      </form>
+    </ng-template>
+
+  </div>
+</div>
+</div>
+<div style="margin-top: 100px"></div>
+
+<app-footer></app-footer>

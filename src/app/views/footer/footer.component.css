@@ -1,0 +1,46 @@
+footer{
+  color: black;
+}
+
+#footer {
+  padding: 7em 0;
+  display: block;
+  width: 100%;
+  background: #E8DAEF;
+}
+#footer h2 {
+  font-size: 25px;
+  color: #CA6F1E  ;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 2em; }
+
+#footer .subscribe .form-control {
+  font-size: 16px;
+  background: transparent;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+#footer .subscribe .btn-custom {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 16px;
+}
+
+
+.grid_12 span{
+  color: blue;
+}
+.btn-custom{
+  background: #ffc107;
+  color: #ffffff;
+  font-size: 1.25em;
+  padding: 10px 0;
+  width: 250px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 2px;
+}

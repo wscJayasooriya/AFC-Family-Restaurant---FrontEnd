@@ -1,0 +1,12 @@
+<div id="overlay"></div>
+<div class="loginbox">
+  <p>Sign In</p><br>
+  <form #frmLogin="ngForm" action="" method="post" (ngSubmit)="login()">
+   <div class="form-group"> <input type="text" class="form-control" placeholder="Username"></div><br>
+    <div class="form-group"><input type="password" class="form-control" placeholder="Password"></div><br>
+
+    <input type="submit" value="LOGIN">
+  </form>
+  <a href="#">Forgot Password?</a><br>
+  <span id="text-account">Don't have an account?</span><button id="create-account" class="btn btn-link" style="color: whitesmoke" (click)="buttonClick()"> Create here.</button>
+</div>

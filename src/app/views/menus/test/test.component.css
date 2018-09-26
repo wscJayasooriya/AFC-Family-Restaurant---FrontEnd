@@ -1,0 +1,22 @@
+.table-responsive{
+  width: 80%;
+  margin-left: 15%;
+}
+#tblTest tbody{
+  background-color: #ffffff;
+}
+#tblTest tr{
+  cursor: pointer;
+}
+#tblTest tr th:first-child, #tblTest tr td:first-child{
+  text-align: center;
+}
+#tblTest tr td:last-child:hover{
+  color: red;
+}
+
+.test-pnl{
+  margin-left: 150px;
+  margin-top: -650px;
+  margin-bottom: 100px;
+}

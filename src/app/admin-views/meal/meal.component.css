@@ -1,0 +1,35 @@
+.emp-pnl{
+  margin-left: 250px;
+}
+input[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+select{
+  width: 40%;
+  padding: 12px 20px;
+  height: 50px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+#tblMeal tbody{
+  background-color: white;
+}
+
+#tblMeal tr{
+  cursor: pointer;
+}
+
+#tblMeal tr td:last-child{
+  text-align: center;
+}
+
+#tblMeal tr td:last-child:hover{
+  color: red;
+}

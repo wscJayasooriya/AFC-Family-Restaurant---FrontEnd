@@ -1,0 +1,27 @@
+.emp-pnl{
+  margin-left: 250px;
+}
+input[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#tblEmployee tbody{
+  background-color: white;
+}
+
+#tblEmployee tr{
+  cursor: pointer;
+}
+
+#tblEmployee tr td:last-child{
+  text-align: center;
+}
+
+#tblEmployee tr td:last-child:hover{
+  color: red;
+}
