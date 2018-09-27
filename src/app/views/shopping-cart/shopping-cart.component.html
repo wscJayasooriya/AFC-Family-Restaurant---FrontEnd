@@ -1,36 +1,58 @@
-
-
-
-<div style="margin-bottom: 100px">
-
-  <hr style="width: 100%;background-color: #ffc107;height: 2px">
-
-  <h1>
-    SHOPPING CART
-  </h1>
-
-  <div class="img-button">
-    <a href="/nevigation/check-out" class="img-btn"><i class="fa fa-money">&#x00009; Proceed to Checkout</i></a>
+<div class="container">
+  <div class="title">
+    <h5 style="position: center"><span><i class="fa fa-shopping-cart"></i>&nbsp; Shopping Cart</span></h5>
   </div>
 
-  <div id="tbldiv"></div>
-
-  <table id="tblCart" class="table table-bordered table-hover">
-    <thead class="table-dark">
+  <table id="cart" class="table table-hover table-condensed">
+    <thead>
     <tr>
-      <th>Product Name</th>
-      <th>Unit Price</th>
-      <th>Quntity</th>
-      <th>Amount</th>
-      <th></th>
+      <th style="width:60%">Meal</th>
+      <th style="width:10%">Price</th>
+      <th style="width:8%">Quantity</th>
+      <th style="width:12%" class="text-center">Sub Total</th>
+      <th style="width:10%"></th>
     </tr>
     </thead>
+    <tbody>
+    <!--<tr *ngFor="paginate: { itemsPerPage: 7, currentPage: p}">-->
+    <tr>
+      <td data-th="Product">
+        <div class="row">
+          <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+          <div class="col-sm-10">
+            <h4 class="nomargin">Meal 1</h4>
+            <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+      </td>
+      <td data-th="Price">$1.99</td>
+      <td data-th="Quantity">
+        <input type="number" class="form-control text-center" value="1">
+      </td>
+      <td data-th="Subtotal" class="text-center">1.99</td>
+      <td class="actions" data-th="">
+        <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>&nbsp;
+        <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="5">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </td>
+    </tr>
+
+    <tr class="visible-xs">
+      <td class="text-center"><strong>Total 1.99</strong></td>
+    </tr>
+    <tr>
+      <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+      <td colspan="2" class="hidden-xs"></td>
+      <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+      <td><button class="btn btn-success btn-block" (click)="buttonClick()" >Checkout <i class="fa fa-angle-right"></i></button></td>
+    </tr>
+
+    </tfoot>
   </table>
-
-  <button id="btnUpdate" class="button button_white btn-update" type="button">
-    <span>Update Shopping Cart</span>
-  </button>
 </div>
-
-
-<app-footer></app-footer>

@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/index';
 import {Employee} from '../dtos/employee';
 
 export const MAIN_URL = 'http://localhost:8080';
-const URL = '/api/v1/customers';
+const URL = '/api/v1/client-Login';
 
 @Injectable()
 export class CustomerRegisterService {

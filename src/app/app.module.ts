@@ -25,7 +25,6 @@ import { SrilankaConerComponent } from './views/menus/srilanka-coner/srilanka-co
 import { JuiceComponent } from './views/menus/juice/juice.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { RoomPaymentComponent } from './views/room-payment/room-payment.component';
 import { CheckoutComponent } from './views/checkout/checkout.component';
 import { ShoppingCartComponent } from './views/shopping-cart/shopping-cart.component';
 import {FormsModule} from '@angular/forms';
@@ -82,11 +81,11 @@ const appRoutes: Routes = [
       {path : 'western-cuisine' , component : WesternCuisineComponent},
       {path : 'test' , component : TestComponent},
 
-      {path : 'room-payment', component : RoomPaymentComponent},
-      {path : 'check-out', component : CheckoutComponent},
+
 
     ]
   },
+  {path : 'check-out', component : CheckoutComponent},
   {path : 'client-login', component : ClientLoginComponent},
   {path : 'registration', component : ClientRegistrationComponent},
   {path: '', redirectTo: '/nevigation/homepage', pathMatch: 'full'},
@@ -112,7 +111,6 @@ const appRoutes: Routes = [
     ItalianCuisineComponent,
     SrilankaConerComponent,
     JuiceComponent,
-    RoomPaymentComponent,
     CheckoutComponent,
     ShoppingCartComponent,
     MenuDashComponent,

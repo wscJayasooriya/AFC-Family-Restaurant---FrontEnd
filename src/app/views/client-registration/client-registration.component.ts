@@ -27,7 +27,7 @@ export class ClientRegistrationComponent implements OnInit {
       (result) => {
         if (result) {
           alert('Registration has been successfully. Thank You!');
-            this.router.navigateByUrl('nevigation/menu-dash');
+            this.router.navigateByUrl('client-login');
 
         } else {
           alert('Your Registration Faild.. Pleac Try!');
