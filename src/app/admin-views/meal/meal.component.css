@@ -9,6 +9,10 @@ input[type=text] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+input[type=file]{
+  width: 40%;
+  border: none;
+}
 select{
   width: 40%;
   padding: 12px 20px;

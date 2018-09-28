@@ -12,6 +12,7 @@ import {AuthGuard} from '../../guards/auth.guard';
 import {AuthService} from '../../services/auth.service';
 import {CustomerRegisterService} from '../../services/customer-register.service';
 import {MealComponent} from '../../admin-views/meal/meal.component';
+import {ViewUsersComponent} from '../../admin-views/view-users/view-users.component';
 
 const appadminroutes: Routes = [
   {path: 'login',
@@ -23,7 +24,8 @@ const appadminroutes: Routes = [
       {path: 'manage-employee', component: EmployeeComponent},
       {path: 'view-comment', component: ViewCommentComponent},
       {path: 'manage-vehicle', component: VehicleComponent},
-      {path: 'manage-meal', component: MealComponent}
+      {path: 'manage-meal', component: MealComponent},
+      {path: 'view-user', component: ViewUsersComponent}
     ]
   },
   {path: '', pathMatch: 'full', redirectTo: '/login'}

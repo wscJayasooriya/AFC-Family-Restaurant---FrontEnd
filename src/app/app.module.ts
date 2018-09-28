@@ -54,7 +54,8 @@ import {VehicleService} from './services/vehicle.service';
 import {MealService} from './services/meal.service';
 import {ClientLoginService} from './services/client-login.service';
 import {FileService} from './services/file.service';
-import { TestComponent } from './views/menus/test/test.component';
+import { AllCategoryComponent } from './views/menus/all-category/all-category.component';
+import { MealFilterPipe } from './pipes/meal-filter.pipe';
 
 const appRoutes: Routes = [
   {
@@ -79,7 +80,7 @@ const appRoutes: Routes = [
       {path : 'soup-kettle', component : SoupKettleComponent},
       {path : 'srilanka-coner' , component : SrilankaConerComponent},
       {path : 'western-cuisine' , component : WesternCuisineComponent},
-      {path : 'test' , component : TestComponent},
+      {path : 'all-category' , component : AllCategoryComponent}
 
 
 
@@ -126,7 +127,8 @@ const appRoutes: Routes = [
     ViewUsersComponent,
     ClientLoginComponent,
     ClientRegistrationComponent,
-    TestComponent
+    AllCategoryComponent,
+    MealFilterPipe
   ],
   imports: [
     BrowserModule,

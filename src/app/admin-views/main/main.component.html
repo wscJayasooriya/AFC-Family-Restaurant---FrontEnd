@@ -2,7 +2,7 @@
   <div id="header">
     <div class="logo"><a href="#">AFC <span>Family Group</span></a>
 
-      <a href="#" (click)="logout()"><i class="fa fa-sign-out" style="margin-left: 1000px">Sign Out</i> </a>
+      <a (click)="logout()" style="cursor: pointer"><i class="fa fa-sign-out" style="margin-left: 1000px">Sign Out</i> </a>
 
     </div>
   </div>
@@ -27,7 +27,7 @@
         <li><a href="#"><i class="fa fa-first-order" style="font-size: 30px"></i>&nbsp; Manage Orders</a> </li>
         <li><a href="/main/view-comment"><i class="fa fa-comment" style="font-size: 30px"></i>&nbsp; View Comment</a> </li>
         <li><a href="#"><i class="fa fa-tasks" style="font-size: 30px"></i>&nbsp; View Orders</a> </li>
-        <li><a href="#"><i class="fa fa-users" style="font-size: 30px"></i>&nbsp; View Users</a> </li>
+        <li><a href="/main/view-user"><i class="fa fa-users" style="font-size: 30px"></i>&nbsp; View Users</a> </li>
         <li><a href="/main/manage-vehicle"><i class="fa fa-bicycle" style="font-size: 30px"></i>&nbsp; Manage Vehicle</a> </li>
         <li><a href="#"><i class="fa fa-user" style="font-size: 30px"></i>&nbsp; User Profile</a> </li>
         <li><a href="#"><i class="fa fa-cogs" style="font-size: 30px"></i>&nbsp; Setting</a> </li>
@@ -47,12 +47,6 @@
 
 <router-outlet></router-outlet>
 
-<!--<footer class="main-footer">-->
-  <!--<div class="footer-copyright text-center py-3">© 2018 Copyright:-->
-    <!--<a href="http://www.ijse.lk/"> ijse.lk</a>-->
-    <!--<p>Create by &nbsp; <i class="fa fa-heart" style="color: red"></i> WSC Jayasooriya</p>-->
-  <!--</div>-->
-<!--</footer>-->
 
 
 

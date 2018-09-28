@@ -11,5 +11,8 @@ export class ViewUsersComponent implements OnInit {
 
   ngOnInit() {
   }
+  save(product) {
+    console.log(product);
+  }
 
 }

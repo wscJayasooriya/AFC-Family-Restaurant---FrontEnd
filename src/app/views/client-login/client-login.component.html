@@ -2,8 +2,8 @@
 <div class="loginbox">
   <p>Sign In</p><br>
   <form #frmLogin="ngForm" action="" method="post" (ngSubmit)="login()">
-   <div class="form-group"> <input type="text" class="form-control" placeholder="Username"></div><br>
-    <div class="form-group"><input type="password" class="form-control" placeholder="Password"></div><br>
+   <div class="form-group"> <input type="text" [(ngModel)]="customer.cus_UName" name="cus_UName" class="form-control" placeholder="Username"></div><br>
+    <div class="form-group"><input type="password" [(ngModel)]="customer.cus_Password" name="cus_Password" class="form-control" placeholder="Password"></div><br>
 
     <input type="submit" value="LOGIN">
   </form>
