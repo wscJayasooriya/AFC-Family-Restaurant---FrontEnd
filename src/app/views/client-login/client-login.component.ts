@@ -30,8 +30,13 @@ export class ClientLoginComponent implements OnInit {
     this.clientLoginService.login(this.customer).subscribe(
       (result) => {
         this.failed = !result;
+        if (result) {
+          localStorage.setItem('user', this.customer.cus_UName);
+         // logout- localStorage.removeItem("user");
+        }
       }
     );
   }
+
 
 }

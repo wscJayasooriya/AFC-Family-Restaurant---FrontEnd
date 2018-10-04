@@ -3,22 +3,7 @@
   <hr style="border: 2px solid; color:#007bb5;width: 90%">
 
   <div class="container">
-    <div class="header" style="display: inline;">
-      <button class="btn btn-primary" style="font-size: 20px;">
-        Create New Meal
-      </button>
-    </div>
     <form method="POST" enctype="multipart/form-data" modelAttribute="fileBucket" (ngSubmit)="upload()" #frmUp="ngForm" action="">
-
-
-        <div class="form-group row">
-          <label class="col-sm-4 text-right">Select Image :</label>
-          <div class="col-sm-8">
-            <input type="file" name="file" multiple="multiple"  #fileInput>
-          </div>
-        </div>
-
-
         <div>
           <div class="form-group">
           <select class="form-control" id="category" name="category" [(ngModel)]="selectedMeal.category">
@@ -41,11 +26,12 @@
           <input type="text" id="description" name="txtDescription" placeholder="Description" [(ngModel)]="selectedMeal.desription" class="form-control">
         </div>
         <div class="form-group">
-          <input type="text" id="sPrice" name="txtPrice" placeholder="Small Portion Price" [(ngModel)]="selectedMeal.smallPrice" class="form-control">
+          <input type="text" id="price" name="txtPrice" placeholder=" Portion Price" [(ngModel)]="selectedMeal.price" class="form-control">
         </div>
-        <div class="form-group">
-          <input type="text" id="lPrice" name="txtPrice" placeholder="Large Portion Price" [(ngModel)]="selectedMeal.largePrice" class="form-control">
-        </div>
+          <div class="form-group ">
+            <h5>Select Image :</h5>
+            <input class="form-control" type="file" name="file" multiple="multiple"  #fileInput>
+          </div>
         <div class="form-group btn-emp">
           <button  style="width: 100px;margin-left: 200px" type="button" (click)="clear()" class="btn btn-warning">Clear</button>
           &nbsp;
@@ -67,8 +53,7 @@
         <th>Category</th>
         <th>Meal Name</th>
         <th>Description</th>
-        <th>Small Portion Price</th>
-        <th>Large Portion Price</th>
+        <th>Portion Price</th>
         <th></th>
       </tr>
       </thead>
@@ -80,8 +65,7 @@
         <td>{{meal.category}}</td>
         <td>{{meal.mealName}}</td>
         <td>{{meal.desription}}</td>
-        <td>{{meal.smallPrice}}</td>
-        <td>{{meal.largePrice}}</td>
+        <td>{{meal.price}}</td>
         <td><i class="fa fa-trash-o fa-2x" style="font-size:30px;" (click)="deleteMeal(meal)"></i></td>
       </tr>
       </tbody>

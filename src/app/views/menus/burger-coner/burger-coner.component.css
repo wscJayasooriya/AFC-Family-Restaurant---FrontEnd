@@ -1,8 +1,3 @@
-/*.container{*/
-/*margin-left:8% ;*/
-/*margin-top: 6%;*/
-/*margin-bottom: 6%;*/
-/*}*/
 .card:hover{
   -webkit-box-shadow: 1px 9px 40px -12px rgba(0,0,0,2);
   -moz-box-shadow: 1px 9px 40px -12px rgba(0,0,0,2);
@@ -157,7 +152,6 @@
 }
 
 #titel{
-  margin-top: -750px;
   margin-left: 680px;
   font-size: 40px;
   color: #CA6F1E;

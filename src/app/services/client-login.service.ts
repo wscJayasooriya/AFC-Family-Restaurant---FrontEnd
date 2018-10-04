@@ -25,4 +25,8 @@ export class ClientLoginService {
         })
       );
   }
+
+  getUserName() {
+    return localStorage.getItem('cus_UName');
+  }
 }

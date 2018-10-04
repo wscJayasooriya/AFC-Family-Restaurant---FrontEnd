@@ -1,0 +1,51 @@
+<br>
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="Search By Category.." style="width: 300px;margin-left: 50px"
+         [(ngModel)]="searchTerm">
+</div>
+<br>
+<div class="test-pnl">
+  <h3 class="label" style="color: #1da1f2; margin-left: 15%">All Meals List</h3>
+  <br>
+
+  <div class="table-responsive">
+    <table class="table table-hover" id="tblTest">
+      <thead class="grey lighten-2" style="text-align: center">
+        <tr >
+          <th style="width: 20%">Image</th>
+          <th style="width: 20%">Category</th>
+          <th style="width: 20%">Meal Name</th>
+          <th style="width: 20%">Description</th>
+          <th style="width: 15%">Portion Price</th>
+          <th style="width: 5%"></th>
+        </tr>
+      </thead>
+      <tbody style="text-align: center">
+        <tr *ngFor="let meal of meals | mealFilter: searchTerm | paginate: {itemsPerPage: 8, currentPage: p}">
+          <td><img src="{{meal.imageURL}}" style="width: 70px; height: 70px;"></td>
+          <td>{{meal.category}}</td>
+          <td>{{meal.mealName}}</td>
+          <td>{{meal.desription}}</td>
+          <td>{{meal.price}}</td>
+          <td><i class="fa fa-shopping-basket fa-2x" style="font-size:30px;"></i></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="6">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+<div class="form-group">
+  <button class="form-inline btn btn-warning" style="margin-left: 20px"  (click)="toggle()">
+    <i class="fa fa-check-square"></i>&nbsp; Check Your Cart
+  </button>
+</div>
+<br style="margin-top: 20px">
+
+<app-footer></app-footer>

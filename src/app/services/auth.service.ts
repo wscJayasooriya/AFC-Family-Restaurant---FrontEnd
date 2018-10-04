@@ -21,7 +21,7 @@ export class AuthService {
         map((result) => {
           sessionStorage.setItem('token', result + '');
           if (result) {
-            this.router.navigate(['/main']);
+            this.router.navigate(['/main/dashboard']);
           }
           return result;
         })
@@ -38,4 +38,6 @@ export class AuthService {
     sessionStorage.removeItem('token');
     this.router.navigate(['/login']);
   }
+
+
 }

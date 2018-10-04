@@ -1,6 +1,5 @@
 .table-responsive{
-  width: 80%;
-  margin-left: 15%;
+  width: 100%;
 }
 #tblTest tbody{
   background-color: #ffffff;
@@ -16,7 +15,8 @@
 }
 
 .test-pnl{
-  margin-left: 150px;
-  margin-top: -650px;
-  margin-bottom: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
+
+

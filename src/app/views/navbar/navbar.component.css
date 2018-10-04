@@ -44,10 +44,8 @@ ul.social-icons3 {
   opacity:0.5;
 }
 /*-----------Navigation-----------------*/
-
-.navigation {
-  background: #5D6D7E ;
-  height: 70px;
+.navbar{
+  height: 60px;
   margin-top: -20px;
 }
 .navbar-brand{
@@ -70,170 +68,24 @@ p.tag {
   font-family: 'Lato', sans-serif;
   font-weight: 600;
 }
-
-#nav {
-  width: 100%;
-  float: left;
-  margin: 0 0 1em 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #ccc;  }
-#nav ul {
-  list-style: none;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0; }
-#nav li {
-  float: left; }
-#nav li a {
-  display: block;
-  padding: 8px 15px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #069;
-  border-right: 1px solid #ccc; }
-#nav li:first-child a {
-  border-left: 1px solid #ccc; }
-#nav li a:hover {
-  color: #c00;
-  background-color: #fff; }
-
-
-.topnav {
-  background-color: #5D6D7E;
-  text-transform: uppercase;
-  overflow: hidden;
+.nav-item a.nav-link:hover{
+  color: #ffce14;
 }
-.topnav a {
-  float: left;
-  color:#FFFFFF;
-  text-align: center;
-  padding: 10px 16px;
-  text-decoration: none;
+.nav-item a.nav-link.active{
+  color: #ffce14;
+}
+.nav-item a.nav-link{
+  color: #ffffff;
   font-size: 16px;
+  font-weight: 500;
 }
-.topnav a:hover {
-  color:  #ffce14;
+.lbl-title{
+  float: right;
+  margin-top: -40px;
+  margin-right: 50px;
 }
-.topnav a.active {
-  color:  #ffce14;
+.lbl-title span{
+  color: blue;
+  font-size: 20px;
+  font-weight: 500;
 }
-
-
-/*=======================================================================================*/
-/*.container {*/
-  /*position: relative;*/
-  /*!*overflow: hidden;*!*/
-  /*width: 100%;*/
-  /*margin-left: 0px;*/
-  /*height: 100vh;*/
-  /*margin-bottom: -65px;*/
-/*}*/
-/*.container .slider {*/
-  /*position: absolute;*/
-  /*top: 0;*/
-  /*left: 0;*/
-  /*width: 500%;*/
-  /*height: 90%;*/
-  /*animation: animate 20s linear infinite;*/
-/*}*/
-/*.container .slider .slide {*/
-  /*position: relative;*/
-  /*width: 20%;*/
-  /*height: 100%;*/
-  /*float: left;*/
-/*}*/
-/*.container .slider .slide .caption {*/
-  /*position: absolute;*/
-  /*bottom: 60px;*/
-  /*top: 80px;*/
-  /*right: 60px;*/
-  /*left: 60px;*/
-  /*padding: 30px;*/
-  /*background-color: rgba(0,0,0,.5);*/
-  /*box-sizing:border-box;*/
-  /*transition: 0.5s;*/
-/*}*/
-/*.container .slider .slide .caption h2 {*/
-  /*margin: 0;*/
-  /*padding: 0;*/
-  /*color: #fff;*/
-  /*font-size: 48px;*/
-  /*transition: 0.5s;*/
-/*}*/
-/*.container .slider .slide .caption p {*/
-  /*margin: 0;*/
-  /*padding: 0;*/
-  /*color: #fff;*/
-  /*font-size: 18px;*/
-  /*transition: 0.5s;*/
-/*}*/
-/*.container .slider .slide.slide1 {*/
-  /*background: url(https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=chair-cutlery-diner-941861.jpg&fm=jpg);*/
-  /*background-size: cover;*/
-  /*background-position: center;*/
-/*}*/
-/*.container .slider .slide.slide2 {*/
-  /*background: url(https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?cs=srgb&dl=asparagus-barbecue-bbq-675951.jpg&fm=jpg);*/
-  /*background-size: cover;*/
-  /*background-position: center;*/
-/*}*/
-/*.container .slider .slide.slide3 {*/
-  /*background: url(https://images.pexels.com/photos/735869/pexels-photo-735869.jpeg?cs=srgb&dl=blur-close-up-cutlery-735869.jpg&fm=jpg);*/
-  /*background-size: cover;*/
-  /*background-position: center;*/
-/*}*/
-/*.container .slider .slide.slide4 {*/
-  /*background: url(https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?cs=srgb&dl=blur-breakfast-chef-262978.jpg&fm=jpg);*/
-  /*background-size: cover;*/
-  /*background-position: center;*/
-/*}*/
-
-
-/*@keyframes animate {*/
-  /*0% {*/
-    /*left: 0;*/
-  /*}*/
-  /*20% {*/
-    /*left: 0;*/
-  /*}*/
-  /*25% {*/
-    /*left: -100%;*/
-  /*}*/
-  /*45% {*/
-    /*left: -100%;*/
-  /*}*/
-  /*50% {*/
-    /*left: -200%;*/
-  /*}*/
-  /*70% {*/
-    /*left: -200%;*/
-  /*}*/
-  /*75% {*/
-    /*left: -300%;*/
-  /*}*/
-  /*95% {*/
-    /*left: -300%;*/
-  /*}*/
-  /*100% {*/
-    /*left: -400%;*/
-  /*}*/
-/*}*/
-
-
-
-/*@media screen and (max-width: 1349px) {*/
-  /*.container .slider .slide .caption {*/
-    /*bottom: 20px;*/
-    /*right: 20px;*/
-    /*left: 20px;*/
-    /*padding: 20px;*/
-  /*}*/
-  /*.container .slider .slide .caption h2 {*/
-    /*margin: 0 0 10px;*/
-    /*font-size: 30px;*/
-  /*}*/
-  /*.container .slider .slide .caption p {*/
-    /*font-size: 16px;*/
-  /*}*/
-/*}*/

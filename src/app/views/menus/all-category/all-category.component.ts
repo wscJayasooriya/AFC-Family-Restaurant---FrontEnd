@@ -4,18 +4,35 @@ import {Router} from '@angular/router';
 import {MealService} from '../../../services/meal.service';
 
 @Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['./test.component.css']
+  selector: 'app-all-category',
+  templateUrl: './all-category.component.html',
+  styleUrls: ['./all-category.component.css']
 })
-export class TestComponent implements OnInit {
+export class AllCategoryComponent implements OnInit {
 
   getSelectedMeal: Array<Meal> = [];
   meals: Array<Meal> = [];
   selectedMeal: Meal = new Meal();
   tempMeal: Meal = null;
+  searchTerm: string;
   manuallySelected = false;
+
+  public show = false;
+  public buttonName: any = 'Show';
+
+
   constructor(private router: Router, private mealService: MealService) { }
+
+  toggle() {
+    this.show = !this.show;
+    // CHANGE THE NAME OF THE BUTTON.
+    if (this.show) {
+      this.buttonName = 'Hide';
+    } else {
+      this.buttonName = 'Show';
+    }
+  }
+
 
   ngOnInit() {
     this.loadAllMeals();
@@ -31,4 +48,7 @@ export class TestComponent implements OnInit {
       }
     );
   }
+  buttonClick = function () {
+    this.router.navigateByUrl('shopping-cart');
+  };
 }
