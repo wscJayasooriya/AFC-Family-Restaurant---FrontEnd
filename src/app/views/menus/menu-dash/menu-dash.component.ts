@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-menu-dash',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuDashComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private  router: Router) { }
 
   ngOnInit() {
   }
+  buttonClick = function () {
+    this.router.navigateByUrl('check-out');
+  };
+
 
 }

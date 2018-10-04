@@ -1,13 +1,36 @@
+.table-responsive{
+  width: 100%;
+}
+#tblTest tbody{
+  background-color: #ffffff;
+}
+#tblTest tr{
+  cursor: pointer;
+}
+#tblTest tr th:first-child, #tblTest tr td:first-child{
+  text-align: center;
+}
+#tblTest tr td:last-child:hover{
+  color: red;
+}
+
+.test-pnl{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
 #cart{
   margin-top: 10px;
   margin-left: 10px;
 }
 .title{
-  margin-top: 8px;
+  margin-top: 10px;
   margin-left: 10px;
+  margin-bottom: 10px;
   top: -10px;
   width: 100%;
-  height: 50px;
+  height: 80px;
   background-color: #AED6F1;
 }
 .table>tbody>tr>td, .table>tfoot>tr>td{
@@ -44,3 +67,6 @@
   table#cart tfoot td .btn{display:block;}
 
 }
+
+
+

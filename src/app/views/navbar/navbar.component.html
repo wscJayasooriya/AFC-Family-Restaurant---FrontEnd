@@ -23,7 +23,7 @@
         <a class="nav-link" routerLink="/nevigation/homepage" routerLinkActive="active">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/nevigation/menu-dash" routerLinkActive="active">Menu</a>
+        <a class="nav-link" routerLink="/nevigation/shopping-cart" routerLinkActive="active">Menu</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/nevigation/specialties" routerLinkActive="active">Special Events</a>
@@ -35,7 +35,7 @@
         <a class="nav-link" routerLink="/nevigation/contact-us" routerLinkActive="active">Contact Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/nevigation/shopping-cart" routerLinkActive="active"><i class="fa fa-shopping-basket">&nbsp; Shopping Cart</i></a>
+        <a class="nav-link" routerLink="/nevigation/menu-dash" routerLinkActive="active"><i class="fa fa-shopping-basket">&nbsp; Shopping Cart</i></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -44,12 +44,13 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" routerLink="#"><i class="fa fa-sliders"></i>&nbsp; Setting</a>
-          <a class="dropdown-item" routerLink="#"><i class="fa fa-sign-out"></i>&nbsp; LogOut</a>
+          <a class="dropdown-item" href="#" (click)="logout()"><i class="fa fa-sign-out"></i>&nbsp; LogOut</a>
         </div>
       </li>
     </ul>
   </div>
 </nav>
+
 
 <div class="content-wrapper">
   <router-outlet></router-outlet>

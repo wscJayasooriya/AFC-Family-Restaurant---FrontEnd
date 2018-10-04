@@ -174,3 +174,6 @@ section .section-title {
   height: 120px;
   border-radius: 50%;
 }
+.delivery h5 span{
+  color: #007b5e;
+}

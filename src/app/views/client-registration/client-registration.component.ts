@@ -3,6 +3,7 @@ import {CustomerRegister} from '../../dtos/customerRegister';
 import {NgForm} from '@angular/forms';
 import {CustomerRegisterService} from '../../services/customer-register.service';
 import {Router} from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-client-registration',
@@ -23,14 +24,13 @@ export class ClientRegistrationComponent implements OnInit {
   }
 
   saveCustomer(): void {
+    console.log('zzzzzzzzzzzzz');
     this.customerService.saveCustomer(this.selectedCustomer).subscribe(
       (result) => {
         if (result) {
-          alert('Registration has been successfully. Thank You!');
-            this.router.navigateByUrl('client-login');
-
+          swal('Congrats!' , 'You Successfully Registered' , 'success');
         } else {
-          alert('Your Registration Faild.. Pleac Try!');
+          swal('OOPs!' , 'Registerd Failed' , 'error');
         }
       }
     );

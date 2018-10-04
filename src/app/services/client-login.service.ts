@@ -29,4 +29,14 @@ export class ClientLoginService {
   getUserName() {
     return localStorage.getItem('cus_UName');
   }
+  isAuthenticated(): boolean {
+    if (sessionStorage.getItem('token')) {
+      return sessionStorage.getItem('token') === 'false' ? false : true;
+    }
+  }
+
+  logout(): void {
+    sessionStorage.removeItem('token');
+    this.router.navigate(['client-login']);
+  }
 }

@@ -11,14 +11,15 @@
   <div class="table-responsive">
     <table class="table table-hover" id="tblTest">
       <thead class="grey lighten-2" style="text-align: center">
-        <tr >
-          <th style="width: 20%">Image</th>
-          <th style="width: 20%">Category</th>
-          <th style="width: 20%">Meal Name</th>
-          <th style="width: 20%">Description</th>
-          <th style="width: 15%">Portion Price</th>
-          <th style="width: 5%"></th>
-        </tr>
+      <tr >
+        <th style="width: 15%">Image</th>
+        <th style="width: 20%">Category</th>
+        <th style="width: 20%">Meal Name</th>
+        <th style="width: 20%">Description</th>
+        <th style="width: 10%">Quantity</th>
+        <th style="width: 10%">Portion Price</th>
+        <th style="width: 5%"></th>
+      </tr>
       </thead>
       <tbody style="text-align: center">
         <tr *ngFor="let meal of meals | mealFilter: searchTerm | paginate: {itemsPerPage: 8, currentPage: p}">
@@ -26,16 +27,19 @@
           <td>{{meal.category}}</td>
           <td>{{meal.mealName}}</td>
           <td>{{meal.desription}}</td>
+          <td data-th="Quantity">
+            <input id="quantity" #quantity type="text" class="form-control text-center">
+          </td>
           <td>{{meal.price}}</td>
-          <td><i class="fa fa-shopping-basket fa-2x" style="font-size:30px;"></i></td>
+          <td><i class="fa fa-shopping-basket fa-2x" style="font-size:30px;" (click)="addToAccount(meal , quantity.value)"></i></td>
         </tr>
       </tbody>
       <tfoot>
-        <tr>
-          <td colspan="6">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
-          </td>
-        </tr>
+      <tr>
+        <td colspan="6">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </td>
+      </tr>
       </tfoot>
     </table>
   </div>
@@ -48,4 +52,53 @@
 </div>
 <br style="margin-top: 20px">
 
-<app-footer></app-footer>
+<div class="container">
+  <div class="title" >
+    <br>
+    <h3 style="margin-left: 50px"><span><i class="fa fa-shopping-cart"></i>&nbsp; Shopping Cart</span></h3>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th class="text-center">Meal</th>
+        <th class="text-center">Meal Name</th>
+        <th class="text-center">Category Name</th>
+        <th class="text-center">Quantity</th>
+        <th class="text-center">Amount (LKR)</th>
+        <th class="text-center"></th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let orderDetail of orderDetails">
+          <td class="text-center"><img src="{{orderDetail.meal.imageURL}}" style="width: 70px; height: 70px;"></td>
+          <td class="text-center">{{orderDetail.meal.mealName}}
+            <div>{{orderDetail.meal.desription}}</div>
+          </td>
+          <td class="text-center">{{orderDetail.meal.category}}</td>
+          <td class="text-center">{{orderDetail.qty}} x Rs. {{orderDetail.meal.price}}</td>
+          <td class="text-center">{{orderDetail.gross_Amount}}</td>
+          <td class="actions text-center" data-th="">
+            <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button> &nbsp;
+            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+          </td>
+        </tr>
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="hidden-xs"></td>
+          <td class="text-center"><h5 class="nxt">Total Amount</h5></td>
+          <td class="text-center"><h5 class="nxt"><strong>{{sub_Total}}</strong></h5></td>
+        </tr>
+        <tr>
+          <td colspan="5" class="hidden-xs"></td>
+          <td><button class="btn btn-success btn-block" (click)="buttonClick()">Checkout <i class="fa fa-angle-right"></i></button></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</div>
+
