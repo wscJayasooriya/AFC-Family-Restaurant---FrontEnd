@@ -1,138 +1,161 @@
-<body style="margin-top: 80px; margin-bottom: 100px">
-<form class="form" style="margin-top: 40px" #frmCheckout="ngForm">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-  <div class="billing-num">1</div>
-  <div class="billing-text">Billing Address</div>
-
-  <div id="first" class="form-group has-feedback" [class.has-error]="fullbillFirstNameControll.invalid && fullbillFirstNameControll.touched" [class.has-success]="fullbillFirstNameControll.valid">
-    <input required id="txtFirst" name="txtFirst" [(ngModel)]="txtFirst" type="text" class="form-control" #fullbillFirstNameControll="ngModel" placeholder="First Name">
-    <span style="font-size: 13px" class="help-block" *ngIf="fullbillFirstNameControll.invalid && fullbillFirstNameControll.touched">First Name is required</span>
-  </div>
-
-  <div id="last" class="form-group has-feedback" [class.has-error]="fullbillLastNameControll.invalid && fullbillLastNameControll.touched" [class.has-success]="fullbillLastNameControll.valid">
-    <input required id="txtLast" name="txtLast" [(ngModel)]="txtLast" type="text" class="form-control" #fullbillLastNameControll="ngModel" placeholder="Last Name">
-    <span style="font-size: 13px;" class="help-block" *ngIf="fullbillLastNameControll.invalid && fullbillLastNameControll.touched">Last Name is required</span>
-  </div>
-
-  <div class="form-group has-feedback" [class.has-error]="fullBillConNoControll.invalid && fullBillConNoControll.touched" [class.has-success]="fullBillConNoControll.valid">
-    <input required id="txtNumber" name="txtNumber" pattern="^\d{4}-\d{3}-\d{3}$" [(ngModel)]="txtNumber" type="text" class="form-control" #fullBillConNoControll="ngModel" placeholder="Contact Number">
-    <span style="font-size: 13px" class="help-block" *ngIf="fullBillConNoControll.errors?.required && fullBillConNoControll.touched">Contact number is required</span>
-    <span style="font-size: 13px" class="help-block" *ngIf="fullBillConNoControll.errors?.pattern && fullBillConNoControll.touched">Contact number is invalid (ex : 0777-123-456)</span>
-  </div>
-
-  <div class="form-group has-feedback" [class.has-error]="fulBilllemailControll.invalid && fulBilllemailControll.touched" [class.has-success]="fulBilllemailControll.valid">
-    <input required id="txtEmail" name="txtEmail" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" [(ngModel)]="txtEmail" type="email" class="form-control" #fulBilllemailControll="ngModel" placeholder="E-mail">
-    <span style="font-size: 13px" class="help-block" *ngIf="fulBilllemailControll.errors?.required && fulBilllemailControll.touched">E-mail is required</span>
-    <span style="font-size: 13px" class="help-block" *ngIf="fulBilllemailControll.errors?.pattern && fulBilllemailControll.touched">E-mail is invalid (ex : amali@gmail.com)</span>
-  </div>
-
-  <div  class="form-group has-feedback" [class.has-error]="fullBillCityControll.invalid && fullBillCityControll.touched" [class.has-success]="fullBillCityControll.valid">
-    <input required id="txtCity" name="txtCity" [(ngModel)]="txtCity" type="text" class="form-control" #fullBillCityControll="ngModel" placeholder="Town">
-    <span style="font-size: 13px;" class="help-block" *ngIf="fullBillCityControll.invalid && fullBillCityControll.touched">Town is required</span>
-  </div>
-
-  <div  class="form-group has-feedback" [class.has-error]="fullBillAddressControll.invalid && fullBillAddressControll.touched">
-    <textarea required id="txtBill" name="txtBill" [(ngModel)]="txtBill" type="text" class="form-control" #fullBillAddressControll="ngModel" placeholder="Belling Address"></textarea>
-    <span style="font-size: 13px" class="help-block" *ngIf="fullBillAddressControll.invalid && fullBillAddressControll.touched">Belling Address is required</span>
-  </div>
-  <div>
-    <div style="margin-top: 70px" class="billing-num">
-      <i class="fa fa-motorcycle"></i>
-    </div>
-    <div class="billing-text">Delivery Address</div>
-
-    <div id="delFirst" class="form-group has-feedback" [class.has-error]="fullDelFirstNameControll.invalid && fullDelFirstNameControll.touched" [class.has-success]="fullDelFirstNameControll.valid">
-      <input required id="txtDelFirst" name="txtDelFirst" [(ngModel)]="txtDelFirst" type="text" class="form-control" #fullDelFirstNameControll="ngModel" placeholder="First Name">
-      <span style="font-size: 13px" class="help-block" *ngIf="fullDelFirstNameControll.invalid && fullDelFirstNameControll.touched">First Name is required</span>
-    </div>
-
-    <div id="delLast" class="form-group has-feedback" [class.has-error]="fullDelLastNameControll.invalid && fullDelLastNameControll.touched" [class.has-success]="fullDelLastNameControll.valid">
-      <input required id="txtDelLast" name="txtDelLast" [(ngModel)]="txtDelLast" type="text" class="form-control" #fullDelLastNameControll="ngModel" placeholder="Last Name">
-      <span style="font-size: 13px;" class="help-block" *ngIf="fullDelLastNameControll.invalid && fullDelLastNameControll.touched">Last Name is required</span>
-    </div>
-
-    <div class="form-group has-feedback" [class.has-error]="fullConNoControll.invalid && fullConNoControll.touched" [class.has-success]="fullConNoControll.valid">
-      <input required id="txtDelNumber" name="txtDelNumber" pattern="^\d{4}-\d{3}-\d{3}$" [(ngModel)]="txtDelNumber" type="text" class="form-control" #fullConNoControll="ngModel" placeholder="Contact Number">
-      <span style="font-size: 13px" class="help-block" *ngIf="fullConNoControll.errors?.required && fullConNoControll.touched">Contact number is required</span>
-      <span style="font-size: 13px" class="help-block" *ngIf="fullConNoControll.errors?.pattern && fullConNoControll.touched">Contact number is invalid (ex : 0777-123-456)</span>
-    </div>
-
-    <div class="form-group has-feedback" [class.has-error]="fullemailControll.invalid && fullemailControll.touched" [class.has-success]="fullemailControll.valid">
-      <input required id="txtDelEmail" name="txtDelEmail" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" [(ngModel)]="txtDelEmail" type="email" class="form-control" #fullemailControll="ngModel" placeholder="E-mail">
-      <span style="font-size: 13px" class="help-block" *ngIf="fullemailControll.errors?.required && fullemailControll.touched">E-mail is required</span>
-      <span style="font-size: 13px" class="help-block" *ngIf="fullemailControll.errors?.pattern && fullemailControll.touched">E-mail is invalid (ex : amali@gmail.com)</span>
+<div class="container wrapper">
+  <div class="row cart-head">
+    <div class="container">
+      <div class="row" style="margin-top: 30px; margin-left: 30px">
+        <p></p>
+        <i class="fa fa-home fa-5x" style="cursor: pointer" routerLink="/nevigation/homepage" title="<- Go Home"></i>
+      </div>
+      <div class="row" style="margin-top: -50px">
+        <div style="display: table; margin: auto;">
+          <span class="step step_complete"> <a routerLink="/nevigation/shopping-cart" class="check-bc">Cart</a> <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>
+          <span class="step step_complete"> <a href="#" class="check-bc">Checkout</a> <span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
+          <span class="step_thankyou check-bc step_complete">Thank you</span>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 20px">
+        <p></p>
+      </div>
     </div>
   </div>
 
-  <div  class="form-group has-feedback" [class.has-error]="fullCityControll.invalid && fullCityControll.touched" [class.has-success]="fullCityControll.valid">
-    <input required id="txtDelCity" name="txtDelCity" [(ngModel)]="txtDelCity" type="text" class="form-control" #fullCityControll="ngModel" placeholder="Town">
-    <span style="font-size: 13px;" class="help-block" *ngIf="fullCityControll.invalid && fullCityControll.touched">Town is required</span>
-  </div>
+  <form class="form-horizontal" method="post" action="">
 
-  <div  class="form-group has-feedback" [class.has-error]="fullAddressControll.invalid && fullAddressControll.touched">
-    <textarea required id="txtDel" name="txtDel" [(ngModel)]="txtDel" type="text" class="form-control" #fullAddressControll="ngModel" placeholder="Delivery Address"></textarea>
-    <span style="font-size: 13px" class="help-block" *ngIf="fullAddressControll.invalid && fullAddressControll.touched">Delivery Address is required</span>
-  </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <!--SHIPPING METHOD-->
+        <div class="panel panel-info">
+          <div class="panel-heading" style="color:#0618B4; font-weight:600; font-size: 18px">Billing Address</div>
+          <div class="panel-body">
+            <div class="form-group">
+              <div class="col-md-12"><strong>Name:</strong></div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="country" value="" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12"><strong>Address:</strong></div>
+              <div class="col-md-12">
+                <input type="text" name="address" class="form-control" value="" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12"><strong>Phone Number:</strong></div>
+              <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="" /></div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12"><strong>Email Address:</strong></div>
+              <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="" /></div>
+            </div>
+          </div>
+        </div>
 
-  <hr class="horizontalLine">
+        <br>
 
-  <div class="deliveryMethod">
-    <div class="billing-num">2</div>
-    <div class="billing-text">Delivery Method</div>
+        <div class="panel panel-info">
+          <div class="panel-heading" style="color:#0618B4; font-weight:600; font-size: 18px">Delivering Address</div>
+          <div class="panel-body">
+            <div class="form-group">
+              <div class="col-md-12"><strong>Name:</strong></div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="name" value="" />
+              </div>
+            </div>
 
-    <div id="subtopic1">**Please use Sri Lanka Standard Times</div>
+            <div class="form-group">
+              <div class="col-md-12"><strong>Delivery Address:</strong></div>
+              <div class="col-md-12">
+                <input type="text" name="address" class="form-control" value="" />
+              </div>
+            </div>
 
-    <div class="subtopic2">Delivery</div>
+            <div class="form-group">
+              <div class="col-md-12"><strong>City:</strong></div>
+              <div class="col-md-12">
+                <input type="text" name="city" class="form-control" value="" />
+              </div>
+            </div>
 
-    <div class="subtopic3">Pickup Hours - 11.30 am to 3.00 pm & 6.30 pm to 10.00 pm</div>
+            <div class="form-group">
+              <div class="col-md-12"><strong>Phone Number:</strong></div>
+              <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="" /></div>
+            </div>
 
-    <div class="lktRadio">
-      <input type="radio" name="pickup"  checked>Delivery - LKR0.00<br>
+          </div>
+        </div>
+        <!--SHIPPING METHOD END-->
+      </div>
+
+      <div class="col-lg-6 col-md-6">
+        <!--REVIEW ORDER-->
+        <div class="panel panel-info">
+          <div class="panel-heading" style="color:#0618B4; font-weight:600; font-size: 18px">
+            Review Order <div class="pull-right"><small><a class="afix-1" href="#">Edit Cart</a></small></div>
+          </div>
+          <div class="panel-body">
+              <div class="form-group">
+                <div class="col-sm-3 col-xs-3">
+                  <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg" />
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                  <div class="col-xs-12">Product name</div>
+                  <div class="col-xs-12"><small>Quantity:<span>1</span></small></div>
+                </div>
+                <div class="col-sm-3 col-xs-3 text-right">
+                  <h6><span>$</span>25.00</h6>
+                </div>
+              </div>
+
+              <div class="form-group"><hr /></div>
+              <div class="form-group">
+                <div class="col-sm-3 col-xs-3">
+                  <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg" />
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                  <div class="col-xs-12">Product name</div>
+                  <div class="col-xs-12"><small>Quantity:<span>2</span></small></div>
+                </div>
+                <div class="col-sm-3 col-xs-3 text-right">
+                  <h6><span>$</span>50.00</h6>
+                </div>
+              </div>
+
+              <div class="form-group"><hr /></div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <strong>Subtotal</strong>
+                  <div class="pull-right"><span>$</span><span>200.00</span></div>
+                </div>
+                <div class="col-xs-12">
+                  <small>Delivering</small>
+                  <div class="pull-right"><span>-</span></div>
+                </div>
+              </div>
+
+              <div class="form-group"><hr /></div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <strong>Order Total</strong>
+                  <div class="pull-right"><span>$</span><span>150.00</span></div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <!--REVIEW ORDER END-->
+
+        <div class="btn-buy">
+            <button class="form-group btn btn-success buy">
+              Buy Now <i class="fa fa-arrow-circle-right"></i>
+            </button>
+        </div>
+
+      </div>
     </div>
 
-    <div class="deliveryInfo">
-      <label style="margin-top: 10px">Delivery Date</label>
-      <input  name="txtDate" type="date" class="form-control" >
-      <label style="margin-top: 10px">Delivery Time</label>
-      <input  name="txtTime" type="time" class="form-control" >
-    </div>
+  </form>
 
-    <hr style="margin-top: -330px; margin-left: 370px" class="horizontalLine">
-  </div>
-
-  <div class="preview">
-    <div class="billing-num">
-      <i class="fa fa-eye"></i>
-    </div>
-    <div class="billing-text">Review</div>
-
-    <div class="tblpreview">
-      <table id="tblCart" class="table table-bordered table-hover">
-        <thead>
-        <tr>
-          <th>Product Name</th>
-          <th>Unit Price</th>
-          <th>Quntity</th>
-          <th>Sub Total</th>
-        </tr>
-        </thead>
-      </table>
-
-      <label style="font-size: 12px; margin-left: 120px">Sub Total : </label>
-      <input style="font-size: 12px; margin-left: 33px" id="txtSubTot" type="text">
-
-      <label style="font-size: 12px; margin-left: 120px">Service Charge : </label>
-      <input style="font-size: 12px; margin-left: 5px" id="txtDeliveryTip" type="text">
-
-      <label style="font-size: 12px; margin-left: 120px">Grand Total : </label>
-      <input style="font-size: 12px; margin-left: 22px" id="txtGrandTotal" type="text">
-    </div>
-
-    <div>
-      <button id="btnSubmit" type="submit" class="btn btn-primary btn-block btn-flat" [disabled]="frmCheckout.invalid">Place Order</button>
-    </div>
-  </div>
-
-
-</form>
-</body>
+</div>

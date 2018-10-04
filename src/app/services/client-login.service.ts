@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 export const MAIN_URL = 'http://localhost:8080';
-const URL = '/api/v1/customers';
+const URL = '/api/v1/client-Login';
 
 @Injectable()
 export class ClientLoginService {
