@@ -2,3 +2,62 @@
 <app-menus></app-menus>
 <app-all-category></app-all-category>
 
+<!--<div class="container">-->
+  <!--<div class="title">-->
+    <!--<h5 style="position: center"><span><i class="fa fa-shopping-cart"></i>&nbsp; Shopping Cart</span></h5>-->
+  <!--</div>-->
+
+  <!--<table id="cart" class="table table-hover table-condensed">-->
+    <!--<thead>-->
+      <!--<tr>-->
+        <!--<th style="width:60%">Meal</th>-->
+        <!--<th style="width:10%">Price</th>-->
+        <!--<th style="width:8%">Quantity</th>-->
+        <!--<th style="width:12%" class="text-center">Sub Total</th>-->
+        <!--<th style="width:10%"></th>-->
+      <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+      <!--<tr *ngFor="let meal of meals | paginate: {itemsPerPage: 8, currentPage: p}">-->
+        <!--<td data-th="Product">-->
+          <!--<div class="row">-->
+            <!--<div class="col-sm-2 hidden-xs"><img src="{{meal.imageURL}}" alt="..." class="img-responsive"/></div>-->
+            <!--<div class="col-sm-10">-->
+              <!--<h4 class="nomargin">{{meal.mealName}}</h4>-->
+              <!--<p>{{meal.desription}}</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</td>-->
+        <!--<td data-th="Price">{{meal.price}}</td>-->
+        <!--<td data-th="Quantity">-->
+          <!--<input type="number" class="form-control text-center" value="1">-->
+        <!--</td>-->
+        <!--<td data-th="Subtotal" class="text-center">1.99</td>-->
+        <!--<td class="actions" data-th="">-->
+          <!--<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>&nbsp;-->
+          <!--<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>-->
+        <!--</td>-->
+      <!--</tr>-->
+    <!--</tbody>-->
+    <!--<tfoot>-->
+      <!--<tr>-->
+        <!--<td colspan="5">-->
+          <!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+        <!--</td>-->
+      <!--</tr>-->
+
+      <!--<tr class="visible-xs">-->
+        <!--<td class="text-center"><strong>Total 1.99</strong></td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>-->
+        <!--<td colspan="2" class="hidden-xs"></td>-->
+        <!--<td class="hidden-xs text-center"><strong>Total $1.99</strong></td>-->
+        <!--<td><button class="btn btn-success btn-block" (click)="buttonClick()" >Checkout <i class="fa fa-angle-right"></i></button></td>-->
+      <!--</tr>-->
+
+    <!--</tfoot>-->
+  <!--</table>-->
+<!--</div>-->
+
+<app-footer></app-footer>

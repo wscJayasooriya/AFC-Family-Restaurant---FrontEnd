@@ -17,8 +17,6 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit() {
   }
-  buttonClick = function () {
-    this.router.navigateByUrl('check-out');
-  };
+
 
 }

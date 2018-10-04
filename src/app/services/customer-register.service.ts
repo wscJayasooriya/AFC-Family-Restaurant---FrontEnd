@@ -15,10 +15,4 @@ export class CustomerRegisterService {
   saveCustomer(cusRegister: CustomerRegister): Observable <boolean> {
     return this.http.post<boolean>(MAIN_URL + URL, cusRegister);
   }
-
-  // getAllCustomers(): Observable<Array<CustomerRegister>> {
-  //   return this.http.get<Array<CustomerRegister>>(MAIN_URL + URL);
-  // }
-
-
 }
