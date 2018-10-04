@@ -67,6 +67,9 @@
   table#cart tfoot td .btn{display:block;}
 
 }
-
+.nxt{
+  color: #0618B4;
+  font-weight: 600;
+}
 
 

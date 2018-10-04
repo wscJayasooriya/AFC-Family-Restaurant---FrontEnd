@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {MealService} from '../../../services/meal.service';
 import {OrderDetails} from '../../../dtos/orderDetails';
 import {OrderdetailService} from '../../../services/orderdetail.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-all-category',
@@ -20,6 +21,7 @@ export class AllCategoryComponent implements OnInit {
   searchTerm: string;
   manuallySelected = false;
   gross_Amount = 0;
+  sub_Total = 0;
   orderDetails: Array<OrderDetails> = [];
   orderDetail: OrderDetails;
 
@@ -28,7 +30,7 @@ export class AllCategoryComponent implements OnInit {
   public buttonName: any = 'Show';
 
 
-  constructor(private router: Router, private mealService: MealService) { }
+  constructor(private router: Router, private mealService: MealService, private httpClient: HttpClient) { }
 
   toggle() {
     this.show = !this.show;
@@ -58,11 +60,12 @@ export class AllCategoryComponent implements OnInit {
   addToAccount(meal, quantity) {
     const total = quantity * meal.price;
     this.gross_Amount = this.gross_Amount + total;
-    // this.total_amount = this.total_amount + total2;
+    this.sub_Total =  + this.gross_Amount;
     const remainingQTY = meal.qtyOnHand - quantity;
     this.orderDetail = new OrderDetails(quantity, total, meal);
     this.orderDetails.push(this.orderDetail);
     document.getElementById('finaltotal').setAttribute('value', this.gross_Amount.toString());
+    document.getElementById('subtotal').setAttribute('value1', this.sub_Total.toString());
   }
 
   buttonClick = function () {
