@@ -6,9 +6,10 @@ import {Employee} from '../dtos/employee';
 import {Router} from '@angular/router';
 import {User} from '../dtos/user';
 import {map} from 'rxjs/operators';
+import {Meal} from '../dtos/meal';
 
 export const MAIN_URL = 'http://localhost:8080';
-const URL = '/api/v1/client-Login';
+const URL = '/api/v1/customers';
 
 @Injectable()
 export class CustomerRegisterService {
@@ -18,26 +19,30 @@ export class CustomerRegisterService {
   saveCustomer(cusRegister: CustomerRegister): Observable <boolean> {
     return this.http.post<boolean>(MAIN_URL + URL, cusRegister);
   }
-  // login(user: User): Observable<boolean> {
-  //   return this.http.post<boolean>(MAIN_URL + URL, user)
-  //     .pipe(
-  //       map((result) => {
-  //         sessionStorage.setItem('token', result + '');
-  //         if (result) {
-  //           this.router.navigate(['/nevigation/homepage']);
-  //         }
-  //         return result;
-  //       })
-  //     );
-  // }
-  //
-  // isAuthenticated(): boolean {
-  //   if (sessionStorage.getItem('token')) {
-  //     return sessionStorage.getItem('token') === 'false' ? false : true;
-  //   }
-  // }
+  login(cusRegister: CustomerRegister): Observable<boolean> {
+    return this.http.post<boolean>(MAIN_URL + URL, cusRegister)
+      .pipe(
+        map((result) => {
+          sessionStorage.setItem('token', result + '');
+          if (result) {
+            this.router.navigate(['client-login']);
+          }
+          return result;
+        })
+      );
+  }
+
+  isAuthenticated(): boolean {
+    if (sessionStorage.getItem('token')) {
+      return sessionStorage.getItem('token') === 'false' ? false : true;
+    }
+  }
   logout(): void {
     sessionStorage.removeItem('token');
     this.router.navigate(['/nevigation/homepage']);
   }
+  getCustomer(customerName: string): Observable<CustomerRegister> {
+    return this.http.get<CustomerRegister>(MAIN_URL + URL + '/' + customerName);
+  }
+
 }

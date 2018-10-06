@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
   }
   logout(): void {
     this.customerRegister.logout();
+    localStorage.removeItem('user');
   }
 
 }

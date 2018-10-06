@@ -6,10 +6,11 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 export const MAIN_URL = 'http://localhost:8080';
-const URL = '/api/v1/client-Login';
+const URL = '/api/v1/clientLogin';
 
 @Injectable()
 export class ClientLoginService {
+  customer: CustomerRegister = new CustomerRegister();
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -19,7 +20,7 @@ export class ClientLoginService {
         map((result) => {
           sessionStorage.setItem('token', result + '');
           if (result) {
-            this.router.navigate(['nevigation/menu-dash']);
+            this.router.navigate(['/nevigation/menu-dash']);
           }
           return result;
         })
@@ -34,9 +35,9 @@ export class ClientLoginService {
       return sessionStorage.getItem('token') === 'false' ? false : true;
     }
   }
-
   logout(): void {
     sessionStorage.removeItem('token');
-    this.router.navigate(['client-login']);
+    this.router.navigate(['/nevigation/homepage']);
+    // localStorage.removeItem('user', this.customer.cus_UName);
   }
 }

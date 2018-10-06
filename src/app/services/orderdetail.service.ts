@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {MAIN_URL} from './employee.service';
 import {OrderDetails} from '../dtos/orderDetails';
 import {HttpClient} from '@angular/common/http';
+import {CustomerRegister} from '../dtos/customerRegister';
 
 const URL = '/api/v1/orderdetail';
 
@@ -26,4 +27,7 @@ export class OrderdetailService {
   getAllOrderdetailsCount(): Observable<number> {
     return this.http.get<number>(MAIN_URL + URL + '/count');
   }
+  // getDetails(od_Id: number): Observable<OrderDetails> {
+  //   return this.http.get<OrderDetails>(MAIN_URL + URL + '/' + od_Id);
+  // }
 }

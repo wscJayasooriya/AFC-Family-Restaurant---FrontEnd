@@ -61,11 +61,10 @@ export class AllCategoryComponent implements OnInit {
     const total = quantity * meal.price;
     this.gross_Amount = this.gross_Amount + total;
     this.sub_Total =  + this.gross_Amount;
-    const remainingQTY = meal.qtyOnHand - quantity;
     this.orderDetail = new OrderDetails(quantity, total, meal);
     this.orderDetails.push(this.orderDetail);
     document.getElementById('finaltotal').setAttribute('value', this.gross_Amount.toString());
-    document.getElementById('subtotal').setAttribute('value1', this.sub_Total.toString());
+    // document.getElementById('subtotal').setAttribute('value1', this.sub_Total.toString());
   }
 
   buttonClick = function () {

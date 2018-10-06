@@ -24,11 +24,11 @@ export class ClientRegistrationComponent implements OnInit {
   }
 
   saveCustomer(): void {
-    console.log('zzzzzzzzzzzzz');
     this.customerService.saveCustomer(this.selectedCustomer).subscribe(
       (result) => {
         if (result) {
           swal('Congrats!' , 'You Successfully Registered' , 'success');
+          this.router.navigate(['client-login']);
         } else {
           swal('OOPs!' , 'Registerd Failed' , 'error');
         }
