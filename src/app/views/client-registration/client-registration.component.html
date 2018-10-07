@@ -6,23 +6,54 @@
 
   <fieldset>
 
-    <legend><span class="number">1</span> Your basic Info</legend>
-
-    <input type="text" id="name" name="fullName" placeholder="Full Name" [(ngModel)]="selectedCustomer.cus_Name">
-    <input type="email" id="mail" name="email" placeholder="Email" [(ngModel)]="selectedCustomer.cus_Email">
-    <input type="text" id="address" name="address" placeholder="Address" [(ngModel)]="selectedCustomer.cus_Address">
-    <input type="text" id="contact" name="contact" placeholder="Contact" [(ngModel)]="selectedCustomer.cus_Contact">
+    <legend><span class="number">1</span> Your Basic Info</legend>
+    <div class="form-group has-feedback" [class.has-error]="fullNameControll.invalid && fullNameControll.touched" [class.has-success]="fullNameControll.valid">
+      <input required type="text" id="name" class="form-control" name="fullName" placeholder="Full Name" [(ngModel)]="selectedCustomer.cus_Name" #fullNameControll="ngModel">
+      <ngb-alert style="font-size: 14px; color: red;" class="help-block" *ngIf="fullNameControll.invalid && fullNameControll.touched">Name is Required</ngb-alert>
+    </div>
+    <div class="form-group has-feedback" [class.has-error]="fullEmailControll.invalid && fullEmailControll.touched" [class.has-success]="fullEmailControll.valid">
+      <input required type="email" id="mail" class="form-control" name="email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" placeholder="Email" [(ngModel)]="selectedCustomer.cus_Email" #fullEmailControll="ngModel">
+      <ngb-alert style="font-size: 14px; color: red;" class="help-block" *ngIf="fullEmailControll.errors?.required && fullEmailControll.touched">E-mail is Required</ngb-alert>
+      <ngb-alert style="font-size: 14px; color: red;" class="help-block" *ngIf="fullEmailControll.errors?.pattern && fullEmailControll.touched">E-mail is Invalid (ex : example@gmail.com)</ngb-alert>
+    </div>
+    <div class="form-group has-feedback" [class.has-error]="fullAddressControll.invalid && fullAddressControll.touched" [class.has-success]="fullAddressControll.valid">
+      <input required type="text" id="address" class="form-control" name="address" placeholder="Address" [(ngModel)]="selectedCustomer.cus_Address" #fullAddressControll="ngModel">
+      <ngb-alert style="font-size: 14px; color: red;" class="help-block" *ngIf="fullAddressControll.invalid && fullAddressControll.touched">Address is Required</ngb-alert>
+    </div>
+    <div class="form-group has-feedback" [class.has-error]="fullContactControll.invalid && fullContactControll.touched" [class.has-success]="fullContactControll.valid">
+      <input required type="text" id="contact" class="form-control" name="contact" placeholder="Contact" pattern="^\d{3}-\d{7}$" [(ngModel)]="selectedCustomer.cus_Contact" #fullContactControll="ngModel">
+      <ngb-alert style="font-size: 14px; color: red;" class="help-block" *ngIf="fullContactControll.errors?.required && fullContactControll.touched">Contact Number is Required</ngb-alert>
+      <ngb-alert style="font-size: 14px; color: red;" class="help-block" *ngIf="fullContactControll.errors?.pattern && fullContactControll.touched">Contact Number is Invalid (ex : 077-7123456)</ngb-alert>
+    </div>
 
 
   </fieldset>
 
   <fieldset>
 
-    <legend><span class="number">2</span> Your profile</legend>
+    <legend><span class="number">2</span> Your Profile</legend>
 
-    <input type="text" id="username" name="username" placeholder="UserName" [(ngModel)]="selectedCustomer.cus_UName">
-    <input type="password" id="password1" name="passwrod" placeholder="Password" [(ngModel)]="selectedCustomer.cus_Password">
-    <input type="password" id="password2" name="reptPassword" placeholder="Repeat Password" [(ngModel)]="selectedCustomer.cus_ConfPassword">
+    <div class="form-group has-feedback" [class.has-error]="fullContactControll.invalid && fullContactControll.touched" [class.has-success]="fullContactControll.valid">
+      <input required type="text" id="username" class="form-control" name="username" placeholder="UserName" [(ngModel)]="selectedCustomer.cus_UName" #fullUserNameControll="ngModel">
+      <ngb-alert style="font-size: 14px; color: red;" class="help-block" *ngIf="fullUserNameControll.invalid && fullUserNameControll.touched">UserName is Required</ngb-alert>
+    </div>
+    <div class="form-group has-feedback" [class.has-error]="fullPasswordControll.invalid && fullPasswordControll.touched" [class.has-success]="fullPasswordControll.valid">
+      <input required type="password" id="password1" class="form-control" name="passwrod" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Password" [(ngModel)]="selectedCustomer.cus_Password" #fullPasswordControll="ngModel">
+      <ngb-alert class="help-block" *ngIf="fullPasswordControll.touched && fullPasswordControll.errors?.required" style="font-size: 12px;color: red;">Password is Required</ngb-alert>
+      <ngb-alert class="help-block" *ngIf="fullPasswordControll.touched && fullPasswordControll.errors?.pattern" style="font-size: 12px;color: red;">
+        Password must contain at least 8 characters, including UPPER/lowercase,Numbers & SpecialChar.
+      </ngb-alert>
+    </div>
+
+    <div class="form-group has-feedback" [class.has-error]="fullConfirmPasswrdControll.invalid && fullConfirmPasswrdControll.touched" [class.has-success]="fullConfirmPasswrdControll.valid">
+      <input required type="password" id="password2" class="form-control" name="reptPassword" appConfirmEqualValidator="passwrod" placeholder="Repeat Password" [(ngModel)]="selectedCustomer.cus_ConfPassword" #fullConfirmPasswrdControll="ngModel">
+      <span class="help-block" *ngIf="fullConfirmPasswrdControll.touched && fullConfirmPasswrdControll.errors?.required" style="font-size: 12px;color: red;">
+        Plese fill out this field
+      </span>
+      <span class="help-block" *ngIf="fullConfirmPasswrdControll.touched && fullConfirmPasswrdControll.errors?.notEqual" style="font-size: 12px;color: red;">
+        Please Enter the same Password as above
+      </span>
+    </div>
 
   </fieldset>
 

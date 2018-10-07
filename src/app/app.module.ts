@@ -81,9 +81,6 @@ const appRoutes: Routes = [
       {path : 'srilanka-coner' , component : SrilankaConerComponent},
       {path : 'western-cuisine' , component : WesternCuisineComponent},
       {path : 'all-category' , component : AllCategoryComponent}
-
-
-
     ]
   },
   {path : 'check-out', component : CheckoutComponent},
