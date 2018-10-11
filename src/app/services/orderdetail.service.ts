@@ -3,7 +3,6 @@ import {Observable} from 'rxjs';
 import {MAIN_URL} from './employee.service';
 import {OrderDetails} from '../dtos/orderDetails';
 import {HttpClient} from '@angular/common/http';
-import {CustomerRegister} from '../dtos/customerRegister';
 
 const URL = '/api/v1/orderdetail';
 

@@ -2,9 +2,8 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {ClientLoginService} from '../../services/client-login.service';
-import {Comment} from '../../dtos/comment';
-import {CustomerRegister} from '../../dtos/customerRegister';
 import {NgForm} from '@angular/forms';
+import {Customer} from '../../dtos/customer';
 
 @Component({
   selector: 'app-client-login',
@@ -13,7 +12,7 @@ import {NgForm} from '@angular/forms';
 })
 export class ClientLoginComponent implements OnInit {
 
-  customer: CustomerRegister = new CustomerRegister();
+  customer: Customer = new Customer();
   failed: boolean;
   @ViewChild('frmLogin') frmLogin = NgForm;
 

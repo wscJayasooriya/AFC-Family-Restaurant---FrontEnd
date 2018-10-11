@@ -25,14 +25,12 @@ import { SrilankaConerComponent } from './views/menus/srilanka-coner/srilanka-co
 import { JuiceComponent } from './views/menus/juice/juice.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { CheckoutComponent } from './views/checkout/checkout.component';
 import { ShoppingCartComponent } from './views/shopping-cart/shopping-cart.component';
 import {FormsModule} from '@angular/forms';
 import {CommentService} from './services/comment.service';
 import {HttpClientModule} from '@angular/common/http';
 import { MenuDashComponent } from './views/menus/menu-dash/menu-dash.component';
 import {MatDialogModule, MatCardModule, MatFormFieldModule} from '@angular/material';
-import {CustomerRegisterService} from './services/customer-register.service';
 import { ConfirmEqualValidatorDirective } from './directives/confirm-equal-validator.directive';
 import { MainComponent } from './admin-views/main/main.component';
 import { DashboardComponent } from './admin-views/dashboard/dashboard.component';
@@ -56,6 +54,8 @@ import {ClientLoginService} from './services/client-login.service';
 import {FileService} from './services/file.service';
 import { AllCategoryComponent } from './views/menus/all-category/all-category.component';
 import { MealFilterPipe } from './pipes/meal-filter.pipe';
+import {OrdersService} from './services/orders.service';
+import {CustomerService} from './services/customer.service';
 
 const appRoutes: Routes = [
   {
@@ -83,7 +83,6 @@ const appRoutes: Routes = [
       {path : 'all-category' , component : AllCategoryComponent}
     ]
   },
-  {path : 'check-out', component : CheckoutComponent},
   {path : 'client-login', component : ClientLoginComponent},
   {path : 'registration', component : ClientRegistrationComponent},
   {path: '', redirectTo: '/nevigation/homepage', pathMatch: 'full'},
@@ -109,7 +108,6 @@ const appRoutes: Routes = [
     ItalianCuisineComponent,
     SrilankaConerComponent,
     JuiceComponent,
-    CheckoutComponent,
     ShoppingCartComponent,
     MenuDashComponent,
     ConfirmEqualValidatorDirective,
@@ -142,11 +140,12 @@ const appRoutes: Routes = [
   ],
   providers: [
     CommentService,
-    CustomerRegisterService,
+    CustomerService,
     AuthService,
     EmployeeService,
     AuthGuard,
     VehicleService,
+    OrdersService,
     MealService,
     ClientLoginService,
     FileService

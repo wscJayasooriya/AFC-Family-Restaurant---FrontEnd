@@ -10,9 +10,9 @@ import {AdminLoginComponent} from '../../admin-views/admin-login/admin-login.com
 import {CommentService} from '../../services/comment.service';
 import {AuthGuard} from '../../guards/auth.guard';
 import {AuthService} from '../../services/auth.service';
-import {CustomerRegisterService} from '../../services/customer-register.service';
 import {MealComponent} from '../../admin-views/meal/meal.component';
 import {ViewUsersComponent} from '../../admin-views/view-users/view-users.component';
+import {CustomerService} from '../../services/customer.service';
 
 const appadminroutes: Routes = [
   {path: 'login',
@@ -42,7 +42,7 @@ const appadminroutes: Routes = [
     AuthGuard,
     AuthService,
     CommentService,
-    CustomerRegisterService
+    CustomerService
   ]
 })
 export class AppadminroutingModule { }

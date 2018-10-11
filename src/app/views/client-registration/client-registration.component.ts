@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {CustomerRegister} from '../../dtos/customerRegister';
 import {NgForm} from '@angular/forms';
-import {CustomerRegisterService} from '../../services/customer-register.service';
 import {Router} from '@angular/router';
 import swal from 'sweetalert2';
+import {CustomerService} from '../../services/customer.service';
+import {Customer} from '../../dtos/customer';
 
 @Component({
   selector: 'app-client-registration',
@@ -12,13 +12,13 @@ import swal from 'sweetalert2';
 })
 export class ClientRegistrationComponent implements OnInit {
 
-  customers: Array<CustomerRegister> = [];
-  selectedCustomer: CustomerRegister = new CustomerRegister();
-  tempCustomer: CustomerRegister = null;
+  customers: Array<Customer> = [];
+  selectedCustomer: Customer = new Customer();
+  tempCustomer: Customer = null;
   manuallySelected: false;
   @ViewChild('frmCustomers') frmCustomers: NgForm;
 
-  constructor(private customerService: CustomerRegisterService, private router: Router) { }
+  constructor(private customerService: CustomerService, private router: Router) { }
 
   ngOnInit() {
   }

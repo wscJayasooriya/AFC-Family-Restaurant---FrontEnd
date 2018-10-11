@@ -94,7 +94,7 @@
         </tr>
         <tr>
           <td colspan="5" class="hidden-xs"></td>
-          <td><button class="btn btn-success btn-block" (click)="buttonClick()">Checkout <i class="fa fa-angle-right"></i></button></td>
+          <td><button class="btn btn-success btn-block" (click)="toggle()">Checkout <i class="fa fa-angle-right"></i></button></td>
         </tr>
       </tfoot>
     </table>
@@ -102,3 +102,150 @@
 
 </div>
 
+<div>
+  <ng-container *ngIf="show">
+    <div class="container wrapper">
+      <div class="row cart-head">
+        <div class="container">
+          <div class="row" style="margin-top: 30px; margin-left: 30px">
+            <p></p>
+            <i class="fa fa-home fa-5x" style="cursor: pointer" routerLink="/nevigation/homepage" title="<- Go Home"></i>
+          </div>
+          <div class="row" style="margin-top: -50px">
+            <div style="display: table; margin: auto;">
+              <span class="step step_complete"> <a routerLink="/nevigation/menu-dash" class="check-bc">Cart</a> <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>
+              <span class="step step_complete"> <a href="#" class="check-bc">Checkout</a> <span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
+              <span class="step_thankyou check-bc step_complete">Thank you</span>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 20px">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <form class="form-horizontal" method="post" action="">
+
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <!--SHIPPING METHOD-->
+            <div class="panel panel-info">
+              <div class="panel-heading" style="color:#0618B4; font-weight:600; font-size: 18px">Billing Address</div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <div class="col-md-12"><strong>Name:</strong></div>
+                  <div class="col-md-12">
+                    <input type="text" class="form-control" name="country" value="{{selectedCustomer.cus_Name}}" disabled/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12"><strong>Address:</strong></div>
+                  <div class="col-md-12">
+                    <input type="text" name="address" class="form-control" value="{{selectedCustomer.cus_Address}}" disabled/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12"><strong>Phone Number:</strong></div>
+                  <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="{{selectedCustomer.cus_Contact}}" disabled/></div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12"><strong>Email Address:</strong></div>
+                  <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="{{selectedCustomer.cus_Email}}" disabled/></div>
+                </div>
+              </div>
+            </div>
+
+            <br>
+
+            <div class="panel panel-info">
+              <div class="panel-heading" style="color:#0618B4; font-weight:600; font-size: 18px">Delivering Address</div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <div class="col-md-12"><strong>Name:</strong></div>
+                  <div class="col-md-12">
+                    <input type="text" class="form-control" name="name" value="" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-12"><strong>Delivery Address:</strong></div>
+                  <div class="col-md-12">
+                    <input type="text" name="address" class="form-control" value="" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-12"><strong>Phone Number:</strong></div>
+                  <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="" /></div>
+                </div>
+
+              </div>
+            </div>
+            <!--SHIPPING METHOD END-->
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <!--REVIEW ORDER-->
+            <div class="panel panel-info">
+              <div class="panel-heading" style="color:#0618B4; font-weight:600; font-size: 18px">
+                Review Order <div class="pull-right"><small><a class="afix-1" href="#">Edit Cart</a></small></div>
+              </div>
+              <br>
+              <div class="form-group">
+                <input class="form-control" type="date" name="o_Date" [(ngModel)]="selectedOrder.o_Date" id="today" style="width: 400px">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="o_Time" [(ngModel)]="selectedOrder.o_Time" id="nowTime" style="width: 400px">
+              </div>
+
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                  <tr>
+                    <th class="text-center">Meal</th>
+                    <th class="text-center">Meal Name</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-center">Amount (LKR)</th>
+                    <th class="text-center"></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let orderDetail of orderDetails">
+                    <td class="text-center"><img src="{{orderDetail.meal.imageURL}}" style="width: 70px; height: 70px;"></td>
+                    <td class="text-center">{{orderDetail.meal.mealName}}
+                      <div>{{orderDetail.meal.desription}}</div>
+                    </td>
+                    <td class="text-center">{{orderDetail.qty}} x Rs. {{orderDetail.meal.price}}</td>
+                    <td class="text-center">{{orderDetail.gross_Amount}}</td>
+                    <td class="actions text-center" data-th="">
+                      <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <td colspan="3" class="hidden-xs"></td>
+                    <td class="text-center"><h5 class="nxt">Total Amount</h5></td>
+                    <td class="text-center"><h5 class="nxt"><strong>{{sub_Total}}</strong></h5></td>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+            </div>
+            <!--REVIEW ORDER END-->
+
+            <div class="btn-buy">
+              <button class="form-group btn btn-success buy" (click)="placeOrder()">
+                Buy Now <i class="fa fa-arrow-circle-right"></i>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </ng-container>
+</div>

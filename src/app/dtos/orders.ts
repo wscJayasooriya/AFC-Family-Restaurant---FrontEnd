@@ -1,10 +1,10 @@
-import {CustomerRegister} from './customerRegister';
 import {OrderDetails} from './orderDetails';
+import {Customer} from './customer';
 
 export class Orders {
   o_ID: number;
   o_Date: string;
   o_Time: string;
-  customer: CustomerRegister;
-  orderDetailsDTO: Array<OrderDetails>;
+  customerName: string;
+  orderDetailsDTOS: Array<OrderDetails>;
 }

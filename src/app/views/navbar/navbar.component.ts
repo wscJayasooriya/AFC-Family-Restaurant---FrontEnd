@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {CustomerRegisterService} from '../../services/customer-register.service';
 import {AuthService} from '../../services/auth.service';
+import {CustomerService} from '../../services/customer.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,14 +12,14 @@ export class NavbarComponent implements OnInit {
 
   cus_UName = '';
 
-  constructor(private router: Router, private customerRegister: CustomerRegisterService, private authService: AuthService) {
+  constructor(private router: Router, private customerService: CustomerService, private authService: AuthService) {
     this.cus_UName = localStorage.getItem('user');
   }
 
   ngOnInit() {
   }
   logout(): void {
-    this.customerRegister.logout();
+    this.customerService.logout();
     localStorage.removeItem('user');
   }
 

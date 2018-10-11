@@ -5,6 +5,11 @@ import {MealService} from '../../../services/meal.service';
 import {OrderDetails} from '../../../dtos/orderDetails';
 import {OrderdetailService} from '../../../services/orderdetail.service';
 import {HttpClient} from '@angular/common/http';
+import {Orders} from '../../../dtos/orders';
+import {OrdersService} from '../../../services/orders.service';
+import swal from 'sweetalert2';
+import {Customer} from '../../../dtos/customer';
+import {CustomerService} from '../../../services/customer.service';
 
 @Component({
   selector: 'app-all-category',
@@ -14,8 +19,10 @@ import {HttpClient} from '@angular/common/http';
 export class AllCategoryComponent implements OnInit {
 
   getSelectedMeal: Array<Meal> = [];
+  selectedCustomer: Customer = new Customer();
   meals: Array<Meal> = [];
   selectedMeal: Meal = new Meal();
+  selectedOrder: Orders = new Orders();
   closeResult: string;
   tempMeal: Meal = null;
   searchTerm: string;
@@ -24,14 +31,15 @@ export class AllCategoryComponent implements OnInit {
   sub_Total = 0;
   orderDetails: Array<OrderDetails> = [];
   orderDetail: OrderDetails;
+  order = new Orders();
 
 
   public show = false;
   public buttonName: any = 'Show';
 
 
-  constructor(private router: Router, private mealService: MealService, private httpClient: HttpClient) { }
-
+  constructor(private customerService: CustomerService, private router: Router, private mealService: MealService,
+              private httpClient: HttpClient, private orderService: OrdersService) { }
   toggle() {
     this.show = !this.show;
     // CHANGE THE NAME OF THE BUTTON.
@@ -45,6 +53,12 @@ export class AllCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.loadAllMeals();
+    this.customerService.getCustomer(localStorage.getItem('user')).subscribe(
+
+      ((result) => {
+        this.selectedCustomer = result;
+      })
+    );
   }
 
   loadAllMeals(): void {
@@ -67,11 +81,24 @@ export class AllCategoryComponent implements OnInit {
     // document.getElementById('subtotal').setAttribute('value1', this.sub_Total.toString());
   }
 
-  buttonClick = function () {
-    this.router.navigateByUrl('check-out');
-  };
-
   clear(): void {
 
+  }
+
+  placeOrder() {
+
+    this.selectedOrder.customerName = this.selectedCustomer.cus_UName;
+    this.selectedOrder.orderDetailsDTOS = this.orderDetails;
+    console.log(this.selectedOrder.o_Date);
+    console.log(this.orderDetails);
+    console.log(this.selectedOrder);
+    this.orderService.placeOrder(this.selectedOrder).subscribe(result => {
+      if (result) {
+        swal('Congrats' , 'Order has been saved Successfully', 'success');
+        location.reload();
+      } else {
+        swal('OOPs', 'Failed to save the Order', 'error');
+      }
+    });
   }
 }

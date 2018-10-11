@@ -1,9 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {CustomerRegisterService} from '../../services/customer-register.service';
 import {HttpClient} from '@angular/common/http';
-import {CustomerRegister} from '../../dtos/customerRegister';
-import {NgForm} from '@angular/forms';
-import swal from 'sweetalert2';
 import {Router} from '@angular/router';
 
 @Component({
