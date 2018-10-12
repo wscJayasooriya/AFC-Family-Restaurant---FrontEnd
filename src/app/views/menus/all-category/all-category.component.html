@@ -46,7 +46,7 @@
 </div>
 
 <div class="form-group">
-  <button class="form-inline btn btn-warning" style="margin-left: 20px"  (click)="toggle()">
+  <button class="form-inline btn btn-warning" style="margin-left: 20px">
     <i class="fa fa-check-square"></i>&nbsp; Check Your Cart
   </button>
 </div>
@@ -163,20 +163,20 @@
                 <div class="form-group">
                   <div class="col-md-12"><strong>Name:</strong></div>
                   <div class="col-md-12">
-                    <input type="text" class="form-control" name="name" value="" />
+                    <input type="text" class="form-control" name="name" [(ngModel)]="selectedOrder.d_Name" value="" />
                   </div>
                 </div>
 
                 <div class="form-group">
                   <div class="col-md-12"><strong>Delivery Address:</strong></div>
                   <div class="col-md-12">
-                    <input type="text" name="address" class="form-control" value="" />
+                    <input type="text" name="address" class="form-control" [(ngModel)]="selectedOrder.d_Address" value="" />
                   </div>
                 </div>
 
                 <div class="form-group">
                   <div class="col-md-12"><strong>Phone Number:</strong></div>
-                  <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="" /></div>
+                  <div class="col-md-12"><input type="text" name="phone_number" [(ngModel)]="selectedOrder.d_Tele" class="form-control" value="" /></div>
                 </div>
 
               </div>

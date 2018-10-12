@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/index';
 import {Comment} from '../dtos/comment';
+import {Meal} from '../dtos/meal';
 
 export const MAIN_URL = 'http://localhost:8080';
 const URL = '/api/v1/comments';
@@ -13,5 +14,9 @@ export class CommentService {
 
   saveComment(comment: Comment): Observable<boolean> {
     return this.http.post<boolean>(MAIN_URL + URL , comment);
+  }
+
+  getAllComments(): Observable<Array<Comment>> {
+    return this.http.get<Array<Comment>>(MAIN_URL + URL);
   }
 }

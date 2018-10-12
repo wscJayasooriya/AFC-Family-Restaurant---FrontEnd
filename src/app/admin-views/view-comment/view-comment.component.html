@@ -8,19 +8,19 @@
         Reply via Comments
       </button>
     </div>
-    <form>
+    <form #frmComments="ngForm">
       <div>
         <div class="form-group">
-          <input type="text" id="cusName" name="cusName" placeholder="Customer Name" class="form-control">
+          <input type="text" id="cusName" [(ngModel)]="selectedComments.name"  name="cusName" placeholder="Customer Name" class="form-control">
         </div>
         <div class="form-group">
-          <input type="text" id="cusEmail" name="cusEmail" placeholder="Customer E-mail" class="form-control">
+          <input type="text" id="cusEmail" [(ngModel)]="selectedComments.email" name="cusEmail" placeholder="Customer E-mail" class="form-control">
         </div>
         <div class="form-group">
-          <input type="text" id="cusContact" name="cusContact" placeholder="Customer Contact" class="form-control">
+          <input type="text" id="cusContact" [(ngModel)]="selectedComments.contact"  name="cusContact" placeholder="Customer Contact" class="form-control">
         </div>
         <div class="form-group">
-          <textarea type="text" id="cusMessage" name="cusMessage" placeholder="Customer  Message" class="form-control"></textarea>
+          <textarea type="text" id="cusMessage" [(ngModel)]="selectedComments.comment" name="cusMessage" placeholder="Customer  Message" class="form-control"></textarea>
         </div>
         <div class="form-group">
           <textarea type="text" id="replyMessage" name="replyMessage"  placeholder="Reply Message" class="form-control"></textarea>
@@ -46,20 +46,17 @@
         <th>E-mail</th>
         <th>Contact NO</th>
         <th>Message</th>
-        <th>Reply Message</th>
-        <th></th>
-        <th></th>
       </tr>
       </thead>
-      <tbody style="text-align: center">
-      <tr>
-        <th>Sandun</th>
-        <td>s@gmail.com</td>
-        <td>0779025982</td>
-        <td>Hi..</td>
-        <td>Hi..</td>
-        <td><i class="fa fa-trash-o fa-2x" style="font-size:30px;"></i></td>
-        <td><i class="fa fa-edit fa-2x" style="font-size:30px;"></i></td>
+      <tbody style="text-align: center" >
+      <tr *ngFor="let comment of comments | paginate: { itemsPerPage: 7, currentPage: p}"
+          (click)="selectComment(comment)" [class.selected]="comments==selectedComments">
+        <td>{{comment.name}}</td>
+        <td>{{comment.email}}</td>
+        <td>{{comment.contact}}</td>
+        <td>{{comment.comment}}</td>
+        <!--<td><i class="fa fa-trash-o fa-2x" style="font-size:30px;"></i></td>-->
+        <!--<td><i class="fa fa-edit fa-2x" style="font-size:30px;"></i></td>-->
       </tr>
 
       </tbody>

@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit {
   logout(): void {
     this.customerService.logout();
     localStorage.removeItem('user');
+    location.reload();
   }
 
 }

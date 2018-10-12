@@ -3,7 +3,6 @@ import {Meal} from '../../../dtos/meal';
 import {Router} from '@angular/router';
 import {MealService} from '../../../services/meal.service';
 import {OrderDetails} from '../../../dtos/orderDetails';
-import {OrderdetailService} from '../../../services/orderdetail.service';
 import {HttpClient} from '@angular/common/http';
 import {Orders} from '../../../dtos/orders';
 import {OrdersService} from '../../../services/orders.service';
@@ -79,10 +78,6 @@ export class AllCategoryComponent implements OnInit {
     this.orderDetails.push(this.orderDetail);
     document.getElementById('finaltotal').setAttribute('value', this.gross_Amount.toString());
     // document.getElementById('subtotal').setAttribute('value1', this.sub_Total.toString());
-  }
-
-  clear(): void {
-
   }
 
   placeOrder() {
